@@ -3,12 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		AF545DD024A08A5C0017C937 /* TranslateTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF545DCF24A08A5C0017C937 /* TranslateTextView.swift */; };
 		AF59F25724A0FD1400A0BC64 /* TranslateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF59F25624A0FD1400A0BC64 /* TranslateService.swift */; };
+		AF70C33424A2247100179910 /* ButtonTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF70C33324A2247100179910 /* ButtonTitleLabel.swift */; };
 		AF80A86E24A10EDC00852D71 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF80A86D24A10EDC00852D71 /* GoogleService-Info.plist */; };
 		AF85EABB249F6ECA00D02D71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF85EABA249F6ECA00D02D71 /* AppDelegate.swift */; };
 		AF85EABD249F6ECA00D02D71 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF85EABC249F6ECA00D02D71 /* SceneDelegate.swift */; };
@@ -31,6 +32,7 @@
 		AD0435A19CE9FD0C80A15A57 /* Pods-SCTranslation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCTranslation.debug.xcconfig"; path = "Target Support Files/Pods-SCTranslation/Pods-SCTranslation.debug.xcconfig"; sourceTree = "<group>"; };
 		AF545DCF24A08A5C0017C937 /* TranslateTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateTextView.swift; sourceTree = "<group>"; };
 		AF59F25624A0FD1400A0BC64 /* TranslateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateService.swift; sourceTree = "<group>"; };
+		AF70C33324A2247100179910 /* ButtonTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTitleLabel.swift; sourceTree = "<group>"; };
 		AF80A86D24A10EDC00852D71 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AF85EAB7249F6ECA00D02D71 /* SCTranslation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCTranslation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF85EABA249F6ECA00D02D71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				AF8C1E9824A04C15000FAB15 /* MikeButtonView.swift */,
 				AF8C1E9624A03E14000FAB15 /* TranslateBarView.swift */,
 				AF545DCF24A08A5C0017C937 /* TranslateTextView.swift */,
+				AF70C33324A2247100179910 /* ButtonTitleLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				AF8C1E9424A03CEF000FAB15 /* VoiceVC.swift in Sources */,
 				AF8C1E9924A04C15000FAB15 /* MikeButtonView.swift in Sources */,
 				AF85EACF249F701F00D02D71 /* MainVC.swift in Sources */,
+				AF70C33424A2247100179910 /* ButtonTitleLabel.swift in Sources */,
 				AF85EABB249F6ECA00D02D71 /* AppDelegate.swift in Sources */,
 				AF85EABD249F6ECA00D02D71 /* SceneDelegate.swift in Sources */,
 				AF85EAD4249F827900D02D71 /* LanguageData.swift in Sources */,
@@ -448,7 +452,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = ZLCDRXJTXW;
 				INFOPLIST_FILE = "SCTranslation/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -468,7 +472,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = ZLCDRXJTXW;
 				INFOPLIST_FILE = "SCTranslation/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

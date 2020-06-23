@@ -80,6 +80,14 @@ class TranslateTextView: UIView {
     configureLanguage = language
   }
   
+  convenience init(frame: CGRect, isFrom: Bool) {
+    self.init(frame: frame)
+    if !isFrom {
+      closeBtn.isHidden = true
+      transTextView.isEditable = false
+    }
+  }
+  
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
@@ -164,11 +172,3 @@ extension TranslateTextView: AVSpeechSynthesizerDelegate {
     textSpeakerBtn.alpha = 0.5
   }
 }
-
-// MARK: - UITextViewDelegate
-
-//extension TranslateTextView: UITextViewDelegate {
-//  func textViewDidChange(_ textView: UITextView) {
-//    displayText = textView.text
-//  }
-//}

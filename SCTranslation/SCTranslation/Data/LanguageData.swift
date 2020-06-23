@@ -1,4 +1,4 @@
-//
+ //
 //  LanguageData.swift
 //  SCTranslation
 //
