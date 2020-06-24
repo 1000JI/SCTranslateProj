@@ -233,7 +233,7 @@ extension LoginVC: UserListVCDelegate {
   }
 }
 
-// MARK: -
+// MARK: - RegisterVCDelegate
 
 extension LoginVC: RegisterVCDelegate {
   func successRegisterUser() {
