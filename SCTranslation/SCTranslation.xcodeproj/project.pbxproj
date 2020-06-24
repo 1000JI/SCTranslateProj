@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF27E65A24A38CDF0049C23F /* Loading.json in Resources */ = {isa = PBXBuildFile; fileRef = AF27E65924A38CDF0049C23F /* Loading.json */; };
+		AF27E65D24A38F230049C23F /* TalkVBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF27E65B24A38F230049C23F /* TalkVBottom.swift */; };
+		AF27E65E24A38F230049C23F /* TalkVTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF27E65C24A38F230049C23F /* TalkVTop.swift */; };
+		AF27E66024A38F3E0049C23F /* TalkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF27E65F24A38F3E0049C23F /* TalkVC.swift */; };
+		AF27E66424A38F580049C23F /* TalkMyCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF27E66224A38F580049C23F /* TalkMyCustomCell.swift */; };
+		AF27E66524A38F580049C23F /* TalkUserCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF27E66324A38F580049C23F /* TalkUserCustomCell.swift */; };
 		AF545DD024A08A5C0017C937 /* TranslateTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF545DCF24A08A5C0017C937 /* TranslateTextView.swift */; };
 		AF57DF5624A30975006FD439 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF57DF5524A30975006FD439 /* RegisterViewModel.swift */; };
 		AF57DF5924A30C3D006FD439 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF57DF5824A30C3D006FD439 /* LoginViewModel.swift */; };
@@ -15,7 +21,6 @@
 		AF57DF5F24A34B5F006FD439 /* ConversationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF57DF5E24A34B5F006FD439 /* ConversationService.swift */; };
 		AF57DF6124A34BEE006FD439 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF57DF6024A34BEE006FD439 /* UserModel.swift */; };
 		AF57DF6824A38646006FD439 /* Bazzi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF57DF6724A38646006FD439 /* Bazzi.ttf */; };
-		AF57DF6B24A38677006FD439 /* 9656-onboarding-page-1.json in Resources */ = {isa = PBXBuildFile; fileRef = AF57DF6A24A38677006FD439 /* 9656-onboarding-page-1.json */; };
 		AF59F25724A0FD1400A0BC64 /* TranslateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF59F25624A0FD1400A0BC64 /* TranslateService.swift */; };
 		AF70C33424A2247100179910 /* ButtonTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF70C33324A2247100179910 /* ButtonTitleLabel.swift */; };
 		AF80A86E24A10EDC00852D71 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF80A86D24A10EDC00852D71 /* GoogleService-Info.plist */; };
@@ -44,6 +49,12 @@
 		086A8126B541808160893102 /* Pods_SCTranslation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SCTranslation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A79FB2A078277B48E85EEF47 /* Pods-SCTranslation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCTranslation.release.xcconfig"; path = "Target Support Files/Pods-SCTranslation/Pods-SCTranslation.release.xcconfig"; sourceTree = "<group>"; };
 		AD0435A19CE9FD0C80A15A57 /* Pods-SCTranslation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCTranslation.debug.xcconfig"; path = "Target Support Files/Pods-SCTranslation/Pods-SCTranslation.debug.xcconfig"; sourceTree = "<group>"; };
+		AF27E65924A38CDF0049C23F /* Loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Loading.json; sourceTree = "<group>"; };
+		AF27E65B24A38F230049C23F /* TalkVBottom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TalkVBottom.swift; path = "../../../../../../Downloads/SCTranslateProj 2/SCTranslation/SCTranslation/View/TalkVBottom.swift"; sourceTree = "<group>"; };
+		AF27E65C24A38F230049C23F /* TalkVTop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TalkVTop.swift; path = "../../../../../../Downloads/SCTranslateProj 2/SCTranslation/SCTranslation/View/TalkVTop.swift"; sourceTree = "<group>"; };
+		AF27E65F24A38F3E0049C23F /* TalkVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TalkVC.swift; path = "../../../../../../Downloads/SCTranslateProj 2/SCTranslation/SCTranslation/Controller/TalkVC.swift"; sourceTree = "<group>"; };
+		AF27E66224A38F580049C23F /* TalkMyCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkMyCustomCell.swift; sourceTree = "<group>"; };
+		AF27E66324A38F580049C23F /* TalkUserCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkUserCustomCell.swift; sourceTree = "<group>"; };
 		AF545DCF24A08A5C0017C937 /* TranslateTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateTextView.swift; sourceTree = "<group>"; };
 		AF57DF5524A30975006FD439 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		AF57DF5824A30C3D006FD439 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -52,7 +63,6 @@
 		AF57DF5E24A34B5F006FD439 /* ConversationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationService.swift; sourceTree = "<group>"; };
 		AF57DF6024A34BEE006FD439 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		AF57DF6724A38646006FD439 /* Bazzi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bazzi.ttf; sourceTree = "<group>"; };
-		AF57DF6A24A38677006FD439 /* 9656-onboarding-page-1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "9656-onboarding-page-1.json"; sourceTree = "<group>"; };
 		AF59F25624A0FD1400A0BC64 /* TranslateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateService.swift; sourceTree = "<group>"; };
 		AF70C33324A2247100179910 /* ButtonTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTitleLabel.swift; sourceTree = "<group>"; };
 		AF80A86D24A10EDC00852D71 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -90,6 +100,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF27E66124A38F580049C23F /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				AF27E66224A38F580049C23F /* TalkMyCustomCell.swift */,
+				AF27E66324A38F580049C23F /* TalkUserCustomCell.swift */,
+			);
+			path = CustomCell;
+			sourceTree = "<group>";
+		};
 		AF57DF5724A30979006FD439 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,7 +137,7 @@
 		AF57DF6924A38665006FD439 /* json */ = {
 			isa = PBXGroup;
 			children = (
-				AF57DF6A24A38677006FD439 /* 9656-onboarding-page-1.json */,
+				AF27E65924A38CDF0049C23F /* Loading.json */,
 			);
 			path = json;
 			sourceTree = "<group>";
@@ -159,6 +178,7 @@
 				AF57DF5724A30979006FD439 /* ViewModel */,
 				AF85EAD2249F825C00D02D71 /* Data */,
 				AF85EAD0249F710800D02D71 /* Controller */,
+				AF27E66124A38F580049C23F /* CustomCell */,
 				AF59F25824A0FD5900A0BC64 /* Service */,
 				AFB731C024A2E2C5009EDDB7 /* Utils */,
 				AF85EAD1249F712400D02D71 /* Supporting Files */,
@@ -178,6 +198,7 @@
 				AFB731BA24A2E1CD009EDDB7 /* LoginVC.swift */,
 				AFB731BC24A2E1E4009EDDB7 /* RegisterVC.swift */,
 				AFB731B824A2E117009EDDB7 /* UserListVC.swift */,
+				AF27E65F24A38F3E0049C23F /* TalkVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -214,6 +235,8 @@
 				AFB731C124A2E47B009EDDB7 /* InputContainerView.swift */,
 				AFB731C324A2E626009EDDB7 /* CustomTextField.swift */,
 				AF57DF5C24A33D6F006FD439 /* UserListCell.swift */,
+				AF27E65B24A38F230049C23F /* TalkVBottom.swift */,
+				AF27E65C24A38F230049C23F /* TalkVTop.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -306,10 +329,10 @@
 			files = (
 				AF85EAC7249F6ECC00D02D71 /* LaunchScreen.storyboard in Resources */,
 				AF80A86E24A10EDC00852D71 /* GoogleService-Info.plist in Resources */,
+				AF27E65A24A38CDF0049C23F /* Loading.json in Resources */,
 				AF57DF6824A38646006FD439 /* Bazzi.ttf in Resources */,
 				AF85EAC4249F6ECC00D02D71 /* Assets.xcassets in Resources */,
 				AF85EAC2249F6ECA00D02D71 /* Main.storyboard in Resources */,
-				AF57DF6B24A38677006FD439 /* 9656-onboarding-page-1.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,10 +402,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF27E65E24A38F230049C23F /* TalkVTop.swift in Sources */,
 				AF59F25724A0FD1400A0BC64 /* TranslateService.swift in Sources */,
 				CE82E03D24A09A4900D75C78 /* LanguageVC.swift in Sources */,
 				AFB731BB24A2E1CD009EDDB7 /* LoginVC.swift in Sources */,
 				AF545DD024A08A5C0017C937 /* TranslateTextView.swift in Sources */,
+				AF27E65D24A38F230049C23F /* TalkVBottom.swift in Sources */,
+				AF27E66524A38F580049C23F /* TalkUserCustomCell.swift in Sources */,
+				AF27E66424A38F580049C23F /* TalkMyCustomCell.swift in Sources */,
 				AF8C1E9724A03E14000FAB15 /* TranslateBarView.swift in Sources */,
 				AF8C1E9424A03CEF000FAB15 /* VoiceVC.swift in Sources */,
 				AF57DF5B24A31136006FD439 /* AuthService.swift in Sources */,
@@ -392,6 +419,7 @@
 				AF57DF6124A34BEE006FD439 /* UserModel.swift in Sources */,
 				AF57DF5624A30975006FD439 /* RegisterViewModel.swift in Sources */,
 				AFB731C424A2E626009EDDB7 /* CustomTextField.swift in Sources */,
+				AF27E66024A38F3E0049C23F /* TalkVC.swift in Sources */,
 				AF57DF5D24A33D6F006FD439 /* UserListCell.swift in Sources */,
 				AF85EACF249F701F00D02D71 /* MainVC.swift in Sources */,
 				AF70C33424A2247100179910 /* ButtonTitleLabel.swift in Sources */,

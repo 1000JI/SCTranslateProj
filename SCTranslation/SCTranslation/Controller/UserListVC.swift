@@ -180,6 +180,10 @@ extension UserListVC: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let selectedUser = isSearchMode ? filterUsersList[indexPath.row] : usersList[indexPath.row]
     print(selectedUser)
+    
+    let controller = TalkVC()
+    controller.modalPresentationStyle = .fullScreen
+    present(controller, animated: true)
   }
 }
 

@@ -7,10 +7,18 @@
 //
 
 import UIKit
+import Lottie
 
 class MainVC: UIViewController {
   
   // MARK: - Properties
+  
+  let animationView: AnimationView = {
+    let animate = AnimationView(name: "Loading")
+    animate.frame = CGRect(x: 0, y: 0, width: 400, height: 400)
+    animate.contentMode = .scaleAspectFill
+    return animate
+  }()
   
   lazy var textBtn: UIButton = {
     let button = UIButton(type: .system)
@@ -53,8 +61,7 @@ class MainVC: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    setupLayout()
-    setupNavigation()
+    setupAnimation()
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -73,6 +80,19 @@ class MainVC: UIViewController {
   }
   
   // MARK: - Setup
+  
+  func setupAnimation() {
+    setupGradientLayer()
+    view.addSubview(animationView)
+    animationView.center = view.center
+
+    animationView.play { finish in
+      self.animationView.removeFromSuperview()
+
+      self.setupLayout()
+      self.setupNavigation()
+    }
+  }
   
   func setupLayout() {
     setupGradientLayer()
