@@ -381,6 +381,7 @@ PODS:
     - gRPC-Core/Interface (= 1.28.2)
   - gRPC-Core/Interface (1.28.2)
   - GTMSessionFetcher/Core (1.4.0)
+  - JGProgressHUD (2.0.4)
   - leveldb-library (1.22)
   - nanopb (1.30905.0):
     - nanopb/decode (= 1.30905.0)
@@ -397,6 +398,7 @@ DEPENDENCIES:
   - Firebase/Firestore
   - Firebase/MLNLTranslate
   - Firebase/Storage
+  - JGProgressHUD (~> 2.0.3)
 
 SPEC REPOS:
   trunk:
@@ -424,6 +426,7 @@ SPEC REPOS:
     - "gRPC-C++"
     - gRPC-Core
     - GTMSessionFetcher
+    - JGProgressHUD
     - leveldb-library
     - nanopb
     - PromisesObjC
@@ -454,11 +457,12 @@ SPEC CHECKSUMS:
   "gRPC-C++": 13d8ccef97d5c3c441b7e3c529ef28ebee86fad2
   gRPC-Core: 4afa11bfbedf7cdecd04de535a9e046893404ed5
   GTMSessionFetcher: 6f5c8abbab8a9bce4bb3f057e317728ec6182b10
+  JGProgressHUD: 62658b14e72cccf179efc7a13bcb54d30b92fc22
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
   PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
   Protobuf: 2793fcd0622a00b546c60e7cbbcc493e043e9bb9
 
-PODFILE CHECKSUM: d2b176436d101ddd64b015259836b80a89090f47
+PODFILE CHECKSUM: c486e825ff9b5236eba6c812497a0fc86555603f
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.9.3

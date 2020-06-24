@@ -124,11 +124,15 @@ class TextVC: UIViewController {
   }
 }
 
+// MARK: - MikeButtonViewDelegate
+
 extension TextVC: MikeButtonViewDelegate {
   func finishRecorder(_ voiceText: String) {
     fromTextViewT.displayText = voiceText
   }
 }
+
+// MARK: - UITextViewDelegate
 
 extension TextVC: UITextViewDelegate {
   func textViewDidChange(_ textView: UITextView) {
@@ -176,6 +180,8 @@ extension TextVC: TranslateBarViewDelegate {
     present(languageVC, animated: true)
   }
 }
+
+// MARK: - LanguageVCDelegate
 
 extension TextVC: LanguageVCDelegate {
   func selectedLanguage(language: Language, isFrom: Bool) {

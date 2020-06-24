@@ -8,15 +8,9 @@
 
 import UIKit
 
-protocol RegisterVCDelegate: class {
-  func successRegisterUser()
-}
-
 class RegisterVC: UIViewController {
   
   // MARK: - Properties
-  
-  weak var delegate: RegisterVCDelegate?
   
   private var viewModel = RegisterViewModel()
   private let iconImage: UIImageView = {
@@ -132,8 +126,6 @@ class RegisterVC: UIViewController {
     guard let password = passwordTextField.text else { return }
     guard let username = usernameTextField.text else { return }
     
-    showLoader(true)
-    
     let registerInfoDatas = RegisterInfoDatas(
       email: email,
       password: password,
@@ -142,13 +134,10 @@ class RegisterVC: UIViewController {
     
     AuthService.shared.createUser(registerInfoDatas: registerInfoDatas) { error in
       if let error = error {
-        self.showLoader(false)
-        self.showError(error.localizedDescription)
+        print(#function, " DEBUG: \(error.localizedDescription))")
         return
       }
-      self.showLoader(false)
-//      self.dismiss(animated: true, completion: nil)
-      self.delegate?.successRegisterUser()
+      self.dismiss(animated: true, completion: nil)
     }
   }
   

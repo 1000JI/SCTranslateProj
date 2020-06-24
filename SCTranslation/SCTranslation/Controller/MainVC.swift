@@ -159,7 +159,15 @@ class MainVC: UIViewController {
   }
   
   @objc func handleChatVC(_ sender: UIButton) {
-    animateLabel(chatLabel, toVC: LoginVC())
+    let controller = LoginVC()
+    controller.delegate = self
+    animateLabel(chatLabel, toVC: controller)
   }
   
+}
+
+extension MainVC: LoginVCDelegate {
+  func dismissViewController() {
+    dismiss(animated: true, completion: nil)
+  }
 }

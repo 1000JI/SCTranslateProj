@@ -9,15 +9,9 @@
 import UIKit
 import Firebase
 
-protocol UserListVCDelegate: class {
-  func dismissViewController()
-}
-
 class UserListVC: UIViewController {
   
   // MARK: - Properties
-  
-  weak var delegate: UserListVCDelegate?
   
   private var usersList: [User] = []
   private var filterUsersList: [User] = []
@@ -58,7 +52,6 @@ class UserListVC: UIViewController {
     tableView.tableFooterView = UIView()
     tableView.rowHeight = 80
     tableView.dataSource = self
-    tableView.delegate = self
     tableView.register(UserListCell.self, forCellReuseIdentifier: UserListCell.identifier)
     return tableView
   }()
@@ -76,10 +69,7 @@ class UserListVC: UIViewController {
   // MARK: - Helpers
   
   func getUsersData() {
-    showLoader(true)
-    
     ConversationService.shared.getUsers { users in
-      self.showLoader(false)
       self.usersList = users
       self.tableView.reloadData()
     }
@@ -132,22 +122,9 @@ class UserListVC: UIViewController {
     navigationController?.navigationBar.barTintColor = .systemGreen
     
     title = "유저 목록"
-    
-    let dismissBarButton = UIBarButtonItem(
-      image: UIImage(systemName: "house"),
-      style: .done,
-      target: self,
-      action: #selector(handleDismiss(_:)))
-    dismissBarButton.tintColor = .white
-    navigationItem.leftBarButtonItem = dismissBarButton
   }
   
   // MARK: - Selectors
-  
-  @objc func handleDismiss(_ sender: UIBarButtonItem) {
-    print(#function)
-    delegate?.dismissViewController()
-  }
   
   @objc func handleLogout(_ sender: UIButton) {
     do {
@@ -171,15 +148,6 @@ extension UserListVC: UITableViewDataSource {
     let cell = tableView.dequeueReusableCell(withIdentifier: UserListCell.identifier, for: indexPath) as! UserListCell
     cell.userData = isSearchMode ? filterUsersList[indexPath.row] : usersList[indexPath.row]
     return cell
-  }
-}
-
-// MARK: - UITableViewDelegate
-
-extension UserListVC: UITableViewDelegate {
-  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let selectedUser = isSearchMode ? filterUsersList[indexPath.row] : usersList[indexPath.row]
-    print(selectedUser)
   }
 }
 

@@ -9,15 +9,9 @@
 import UIKit
 import Firebase
 
-protocol LoginVCDelegate: class {
-  func dismissViewController()
-}
-
 class LoginVC: UIViewController {
   
   // MARK: - Properties
-  
-  weak var delegate: LoginVCDelegate?
   
   private var viewModel = LoginViewModel()
   private let iconImage: UIImageView = {
@@ -97,18 +91,18 @@ class LoginVC: UIViewController {
     configureUI()
     configureNavi()
     configureTextFieldEvent()
-    authCheckUser()
   }
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
+    
+    authCheckUser()
   }
   
   // MARK: - Helpers
   
   func userListVCPresent() {
     let userListVC = UserListVC()
-    userListVC.delegate = self
     let navi = UINavigationController(rootViewController: userListVC)
     navi.modalPresentationStyle = .fullScreen
     present(navi, animated: true)
@@ -178,22 +172,17 @@ class LoginVC: UIViewController {
     guard let email = emailTextField.text else { return }
     guard let password = passwordTextField.text else { return }
     
-    showLoader(true)
-    
     AuthService.shared.loginUser(withEmail: email, password: password) { (result, error) in
       if let error = error {
-        self.showLoader(false)
-        self.showError(error.localizedDescription)
+        print(#function, "DEBUG: ", error.localizedDescription)
         return
       }
-      self.showLoader(false)
       self.userListVCPresent()
     }
   }
   
   @objc func handleJoin() {
     let registerVC = RegisterVC()
-    registerVC.delegate = self
     registerVC.modalPresentationStyle = .fullScreen
     present(registerVC, animated: true)
   }
@@ -223,22 +212,4 @@ class LoginVC: UIViewController {
     }
   }
   
-}
-
-// MARK: - UserListVCDelegate
-
-extension LoginVC: UserListVCDelegate {
-  func dismissViewController() {
-    delegate?.dismissViewController()
-  }
-}
-
-// MARK: -
-
-extension LoginVC: RegisterVCDelegate {
-  func successRegisterUser() {
-    dismiss(animated: true) {
-      self.authCheckUser()
-    }
-  }
 }

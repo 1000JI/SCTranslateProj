@@ -1,12 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "ic_lock_outline_white_2x.png",
+      "filename" : "ic_mail_outline_white_2x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "ic_lock_outline_white_2x 2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

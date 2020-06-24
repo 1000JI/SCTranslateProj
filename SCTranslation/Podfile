@@ -12,5 +12,6 @@ target 'SCTranslation' do
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
+  pod 'JGProgressHUD','~>2.0.3'
 
 end

@@ -7,30 +7,9 @@
 //
 
 import UIKit
-import JGProgressHUD
+
 
 extension UIViewController {
-  
-  static let hud = JGProgressHUD(style: .dark)
-  
-  func showLoader(_ show: Bool, withText text: String? = "Loading") {
-    view.endEditing(true)
-    
-    UIViewController.hud.textLabel.text = text
-    
-    if show {
-      UIViewController.hud.show(in: view)
-    } else {
-      UIViewController.hud.dismiss()
-    }
-  }
-  
-  func showError(_ errorMessage: String) {
-    let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
-    
-    alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
-    present(alert, animated: true, completion: nil)
-  }
   
   func setupGradientLayer() {
     let gradientLayer = CAGradientLayer()
@@ -44,14 +23,14 @@ extension UIViewController {
   }
   
   func setupLoginViewGradientLayer() {
-    //    let gradientLayer = CAGradientLayer()
-    //    gradientLayer.frame = view.frame
-    //    gradientLayer.locations = [0, 1]
-    //
-    //    gradientLayer.colors = [ UIColor.systemGreen.cgColor, UIColor.green.cgColor ]
-    //    gradientLayer.shouldRasterize = true
-    //
-    //    view.layer.addSublayer(gradientLayer)
+//    let gradientLayer = CAGradientLayer()
+//    gradientLayer.frame = view.frame
+//    gradientLayer.locations = [0, 1]
+//
+//    gradientLayer.colors = [ UIColor.systemGreen.cgColor, UIColor.green.cgColor ]
+//    gradientLayer.shouldRasterize = true
+//
+//    view.layer.addSublayer(gradientLayer)
     view.backgroundColor = .systemGreen
   }
   
