@@ -81,7 +81,9 @@ class TextVC: UIViewController {
   private func setupNavi() {
     let dismissBBtn = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(dismissBtn))
     
-    title = "Text"
+    title = "문자 번역"
+    navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Bazzi", size: 20)!]
+    
     navigationController?.navigationBar.isHidden = false
     navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
     navigationController?.navigationBar.shadowImage = UIImage()

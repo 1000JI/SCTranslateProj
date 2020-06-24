@@ -14,6 +14,7 @@
 		AF57DF5D24A33D6F006FD439 /* UserListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF57DF5C24A33D6F006FD439 /* UserListCell.swift */; };
 		AF57DF5F24A34B5F006FD439 /* ConversationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF57DF5E24A34B5F006FD439 /* ConversationService.swift */; };
 		AF57DF6124A34BEE006FD439 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF57DF6024A34BEE006FD439 /* UserModel.swift */; };
+		AF57DF6524A3659D006FD439 /* Bazzi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF57DF6424A3659D006FD439 /* Bazzi.ttf */; };
 		AF59F25724A0FD1400A0BC64 /* TranslateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF59F25624A0FD1400A0BC64 /* TranslateService.swift */; };
 		AF70C33424A2247100179910 /* ButtonTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF70C33324A2247100179910 /* ButtonTitleLabel.swift */; };
 		AF80A86E24A10EDC00852D71 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF80A86D24A10EDC00852D71 /* GoogleService-Info.plist */; };
@@ -49,6 +50,8 @@
 		AF57DF5C24A33D6F006FD439 /* UserListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListCell.swift; sourceTree = "<group>"; };
 		AF57DF5E24A34B5F006FD439 /* ConversationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationService.swift; sourceTree = "<group>"; };
 		AF57DF6024A34BEE006FD439 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		AF57DF6424A3659D006FD439 /* Bazzi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bazzi.ttf; sourceTree = "<group>"; };
+		AF57DF6624A365DD006FD439 /* Bazzi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Bazzi.ttf; path = "SCTranslation/Supporting Files/Font/Bazzi.ttf"; sourceTree = "<group>"; };
 		AF59F25624A0FD1400A0BC64 /* TranslateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateService.swift; sourceTree = "<group>"; };
 		AF70C33324A2247100179910 /* ButtonTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTitleLabel.swift; sourceTree = "<group>"; };
 		AF80A86D24A10EDC00852D71 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -103,6 +106,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		AF57DF6324A3658D006FD439 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				AF57DF6424A3659D006FD439 /* Bazzi.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		AF59F25824A0FD5900A0BC64 /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +127,7 @@
 		AF85EAAE249F6ECA00D02D71 = {
 			isa = PBXGroup;
 			children = (
+				AF57DF6624A365DD006FD439 /* Bazzi.ttf */,
 				AF85EAB9249F6ECA00D02D71 /* SCTranslation */,
 				AF85EAB8249F6ECA00D02D71 /* Products */,
 				E250D9E4E097000181F5A19C /* Pods */,
@@ -165,6 +177,7 @@
 		AF85EAD1249F712400D02D71 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AF57DF6324A3658D006FD439 /* Font */,
 				AF85EABA249F6ECA00D02D71 /* AppDelegate.swift */,
 				AF85EABC249F6ECA00D02D71 /* SceneDelegate.swift */,
 				AF85EAC3249F6ECC00D02D71 /* Assets.xcassets */,
@@ -282,6 +295,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF57DF6524A3659D006FD439 /* Bazzi.ttf in Resources */,
 				AF85EAC7249F6ECC00D02D71 /* LaunchScreen.storyboard in Resources */,
 				AF80A86E24A10EDC00852D71 /* GoogleService-Info.plist in Resources */,
 				AF85EAC4249F6ECC00D02D71 /* Assets.xcassets in Resources */,

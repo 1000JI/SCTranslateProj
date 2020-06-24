@@ -112,6 +112,7 @@ class UserListVC: UIViewController {
     let appearance = UINavigationBarAppearance()
     appearance.configureWithOpaqueBackground()
     appearance.backgroundColor = .systemGreen
+    appearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Bazzi", size: 20)!]
     
     navigationController?.navigationBar.standardAppearance = appearance
     navigationController?.navigationBar.compactAppearance = appearance
@@ -119,7 +120,8 @@ class UserListVC: UIViewController {
     
     navigationController?.navigationBar.isTranslucent = false
     navigationController?.navigationBar.barTintColor = .systemGreen
-    title = "User List"
+    
+    title = "유저 목록"
   }
   
   // MARK: - Selectors

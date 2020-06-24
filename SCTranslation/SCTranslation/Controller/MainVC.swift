@@ -14,10 +14,10 @@ class MainVC: UIViewController {
   
   lazy var textBtn: UIButton = {
     let button = UIButton(type: .system)
-    button.setTitle("TEXT", for: .normal)
+    button.setTitle("문자 번역", for: .normal)
     button.setTitleColor(.black, for: .normal)
     button.backgroundColor = .systemYellow
-    button.titleLabel?.font = .boldSystemFont(ofSize: 32)
+    button.titleLabel?.font = UIFont(name: "Bazzi", size: 44)
     button.layer.cornerRadius = 28
     button.addTarget(self, action: #selector(handleTextVC), for: .touchUpInside)
     return button
@@ -25,10 +25,10 @@ class MainVC: UIViewController {
   
   lazy var voiceBtn: UIButton = {
     let button = UIButton(type: .system)
-    button.setTitle("VOICE", for: .normal)
+    button.setTitle("음성 번역", for: .normal)
     button.setTitleColor(.black, for: .normal)
+    button.titleLabel?.font = UIFont(name: "Bazzi", size: 44)
     button.backgroundColor = .systemPurple
-    button.titleLabel?.font = .boldSystemFont(ofSize: 32)
     button.layer.cornerRadius = 28
     button.addTarget(self, action: #selector(handleVoiceVC), for: .touchUpInside)
     return button
@@ -36,10 +36,10 @@ class MainVC: UIViewController {
   
   lazy var chatBtn: UIButton = {
     let button = UIButton(type: .system)
-    button.setTitle("CHAT", for: .normal)
+    button.setTitle("번역 채팅", for: .normal)
     button.setTitleColor(.black, for: .normal)
     button.backgroundColor = .systemGreen
-    button.titleLabel?.font = .boldSystemFont(ofSize: 32)
+    button.titleLabel?.font = UIFont(name: "Bazzi", size: 44)
     button.layer.cornerRadius = 28
     button.addTarget(self, action: #selector(handleChatVC(_:)), for: .touchUpInside)
     return button
