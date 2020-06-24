@@ -83,7 +83,6 @@ class TextVC: UIViewController {
     
     title = "Text"
     navigationController?.navigationBar.isHidden = false
-    navigationController?.navigationBar.barTintColor = .white
     navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
     navigationController?.navigationBar.shadowImage = UIImage()
     navigationController?.navigationBar.layoutIfNeeded()
@@ -110,8 +109,7 @@ class TextVC: UIViewController {
   }
   
   @objc private func dismissBtn(_ sender: UIBarButtonItem) {
-    
-    navigationController?.popViewController(animated: true)
+    dismiss(animated: true, completion: nil)
   }
   
   @objc private func textClearAction(_ sender: UIButton) {

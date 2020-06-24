@@ -14,8 +14,8 @@ class VoiceVC: UIViewController {
   
   let translateBarView = TranslateBarView(frame: .zero)
   let mikeButtonView = MikeButtonView(frame: .zero)
-  let fromTextView = TranslateTextView(frame: .zero)
-  let toTextView = TranslateTextView(frame: .zero)
+  lazy var fromTextView = TranslateTextView(frame: .zero)
+  lazy var toTextView = TranslateTextView(frame: .zero, isFrom: false)
   
   lazy var fromLanguage: Language? = translateBarView.fromLanguageData
   lazy var toLanguage: Language? = translateBarView.toLanguageData
@@ -78,7 +78,6 @@ class VoiceVC: UIViewController {
     
     title = "Voice"
     navigationController?.navigationBar.isHidden = false
-    navigationController?.navigationBar.barTintColor = .white
     navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
     navigationController?.navigationBar.shadowImage = UIImage()
     navigationController?.navigationBar.layoutIfNeeded()
@@ -92,7 +91,7 @@ class VoiceVC: UIViewController {
   // MARK: - Selectors
   
   @objc private func dismissBtn() {
-    navigationController?.popViewController(animated: true)
+    dismiss(animated: true, completion: nil)
   }
   
 }
@@ -123,6 +122,7 @@ extension VoiceVC: TranslateBarViewDelegate {
     fromLanguage = from
     toLanguage = to
     
+    mikeButtonView.configureLanguage = from
     fromTextView.configureLanguage = from
     toTextView.configureLanguage = to
     
@@ -145,10 +145,13 @@ extension VoiceVC: TranslateBarViewDelegate {
 extension VoiceVC: LanguageVCDelegate {
   func selectedLanguage(language: Language, isFrom: Bool) {
     if isFrom {
+      mikeButtonView.configureLanguage = language
       translateBarView.fromLanguageData = language
+      fromTextView.configureLanguage = language
       self.fromLanguage = language
     } else {
       translateBarView.toLanguageData = language
+      toTextView.configureLanguage = language
       self.toLanguage = language
     }
   }

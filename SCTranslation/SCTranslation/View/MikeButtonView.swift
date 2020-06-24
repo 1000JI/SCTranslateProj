@@ -20,8 +20,9 @@ class MikeButtonView: UIView {
   weak var delegate: MikeButtonViewDelegate?
   
   private var recordText: String?
+  var configureLanguage: Language? = dataLanguages[0]
   
-  private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "ko-KR"))
+  private var speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "ko-KR"))
   private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
   private var recognitionTask: SFSpeechRecognitionTask?
   private let audioEngine = AVAudioEngine()
@@ -39,7 +40,7 @@ class MikeButtonView: UIView {
       }
       else {
         mikeButton.setImage(micSymbolImage, for: .normal)
-        mikeButton.backgroundColor = .systemPurple
+        mikeButton.backgroundColor = .clear
         mikeButton.tintColor = .white
       }
     }
@@ -79,6 +80,11 @@ class MikeButtonView: UIView {
     layer.borderColor = UIColor.black.cgColor
     layer.borderWidth = 0.5
     layer.cornerRadius = buttonSize / 2
+
+    layer.shadowColor = UIColor.black.cgColor
+    layer.shadowOffset = CGSize(width: 0, height: 0)
+    layer.shadowRadius = 2
+    layer.shadowOpacity = 1.0
     
     clipsToBounds = true
     
@@ -103,6 +109,8 @@ class MikeButtonView: UIView {
       recognitionTask?.cancel()
       recognitionTask = nil
     }
+    guard let language = configureLanguage else { return }
+    speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: language.transVoice))
     
     let audioSession = AVAudioSession.sharedInstance()
     do {
