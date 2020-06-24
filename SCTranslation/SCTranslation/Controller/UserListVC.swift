@@ -61,6 +61,7 @@ class UserListVC: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     configureUI()
+    configureSearchBar()
     configureNavi()
     getUsersData()
   }
@@ -71,6 +72,21 @@ class UserListVC: UIViewController {
     ConversationService.shared.getUsers { users in
       self.usersList = users
       self.tableView.reloadData()
+    }
+  }
+  
+  func configureSearchBar() {
+    searchController.searchResultsUpdater = self
+    searchController.searchBar.showsCancelButton = false
+    navigationItem.searchController = searchController
+    searchController.obscuresBackgroundDuringPresentation = false
+    searchController.hidesNavigationBarDuringPresentation = false
+    searchController.searchBar.placeholder = "Search for a user"
+    definesPresentationContext = false
+    
+    if let textField = searchController.searchBar.value(forKey: "searchField") as? UITextField {
+      textField.textColor = .black
+      textField.backgroundColor = .white
     }
   }
   
@@ -93,6 +109,14 @@ class UserListVC: UIViewController {
   }
   
   func configureNavi() {
+    let appearance = UINavigationBarAppearance()
+    appearance.configureWithOpaqueBackground()
+    appearance.backgroundColor = .systemGreen
+    
+    navigationController?.navigationBar.standardAppearance = appearance
+    navigationController?.navigationBar.compactAppearance = appearance
+    navigationController?.navigationBar.scrollEdgeAppearance = appearance
+    
     navigationController?.navigationBar.isTranslucent = false
     navigationController?.navigationBar.barTintColor = .systemGreen
     title = "User List"
@@ -111,14 +135,28 @@ class UserListVC: UIViewController {
   
 }
 
+// MARK: - UITableViewDataSource
+
 extension UserListVC: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return usersList.count
+    return isSearchMode ? filterUsersList.count : usersList.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: UserListCell.identifier, for: indexPath) as! UserListCell
-    cell.userData = usersList[indexPath.row]
+    cell.userData = isSearchMode ? filterUsersList[indexPath.row] : usersList[indexPath.row]
     return cell
+  }
+}
+
+// MARK: - UISearchResultsUpdating
+
+extension UserListVC: UISearchResultsUpdating {
+  func updateSearchResults(for searchController: UISearchController) {
+    guard let searchText = searchController.searchBar.text?.lowercased() else { return }
+    filterUsersList = usersList.filter({ user -> Bool in
+      return user.username.lowercased().contains(searchText)
+    })
+    self.tableView.reloadData()
   }
 }
