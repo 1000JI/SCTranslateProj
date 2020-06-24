@@ -13,10 +13,11 @@ class MainVC: UIViewController {
   
   // MARK: - Properties
   
-  let animationView: AnimationView = {
+  lazy var animationView: AnimationView = {
     let animate = AnimationView(name: "Loading")
-    animate.frame = CGRect(x: 0, y: 0, width: 400, height: 400)
-    animate.contentMode = .scaleAspectFill
+    animate.frame = view.frame
+    animate.contentMode = .scaleAspectFit
+    animate.backgroundColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
     return animate
   }()
   
@@ -83,14 +84,14 @@ class MainVC: UIViewController {
   
   func setupAnimation() {
     setupGradientLayer()
+    self.setupLayout()
+    self.setupNavigation()
+    
     view.addSubview(animationView)
     animationView.center = view.center
 
     animationView.play { finish in
       self.animationView.removeFromSuperview()
-
-      self.setupLayout()
-      self.setupNavigation()
     }
   }
   
