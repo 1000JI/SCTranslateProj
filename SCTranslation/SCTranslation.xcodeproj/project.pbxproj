@@ -11,6 +11,9 @@
 		AF57DF5624A30975006FD439 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF57DF5524A30975006FD439 /* RegisterViewModel.swift */; };
 		AF57DF5924A30C3D006FD439 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF57DF5824A30C3D006FD439 /* LoginViewModel.swift */; };
 		AF57DF5B24A31136006FD439 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF57DF5A24A31136006FD439 /* AuthService.swift */; };
+		AF57DF5D24A33D6F006FD439 /* UserListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF57DF5C24A33D6F006FD439 /* UserListCell.swift */; };
+		AF57DF5F24A34B5F006FD439 /* ConversationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF57DF5E24A34B5F006FD439 /* ConversationService.swift */; };
+		AF57DF6124A34BEE006FD439 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF57DF6024A34BEE006FD439 /* UserModel.swift */; };
 		AF59F25724A0FD1400A0BC64 /* TranslateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF59F25624A0FD1400A0BC64 /* TranslateService.swift */; };
 		AF70C33424A2247100179910 /* ButtonTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF70C33324A2247100179910 /* ButtonTitleLabel.swift */; };
 		AF80A86E24A10EDC00852D71 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF80A86D24A10EDC00852D71 /* GoogleService-Info.plist */; };
@@ -43,6 +46,9 @@
 		AF57DF5524A30975006FD439 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		AF57DF5824A30C3D006FD439 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		AF57DF5A24A31136006FD439 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		AF57DF5C24A33D6F006FD439 /* UserListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListCell.swift; sourceTree = "<group>"; };
+		AF57DF5E24A34B5F006FD439 /* ConversationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationService.swift; sourceTree = "<group>"; };
+		AF57DF6024A34BEE006FD439 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		AF59F25624A0FD1400A0BC64 /* TranslateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateService.swift; sourceTree = "<group>"; };
 		AF70C33324A2247100179910 /* ButtonTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTitleLabel.swift; sourceTree = "<group>"; };
 		AF80A86D24A10EDC00852D71 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -89,11 +95,20 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		AF57DF6224A34BF3006FD439 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AF57DF6024A34BEE006FD439 /* UserModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		AF59F25824A0FD5900A0BC64 /* Service */ = {
 			isa = PBXGroup;
 			children = (
 				AF59F25624A0FD1400A0BC64 /* TranslateService.swift */,
 				AF57DF5A24A31136006FD439 /* AuthService.swift */,
+				AF57DF5E24A34B5F006FD439 /* ConversationService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -120,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				AF8C1E9524A03DAF000FAB15 /* View */,
+				AF57DF6224A34BF3006FD439 /* Model */,
 				AF57DF5724A30979006FD439 /* ViewModel */,
 				AF85EAD2249F825C00D02D71 /* Data */,
 				AF85EAD0249F710800D02D71 /* Controller */,
@@ -139,9 +155,9 @@
 				AF8C1E9324A03CEF000FAB15 /* VoiceVC.swift */,
 				CE82E03A24A09A1700D75C78 /* TextVC.swift */,
 				CE82E03C24A09A4900D75C78 /* LanguageVC.swift */,
-				AFB731B824A2E117009EDDB7 /* UserListVC.swift */,
 				AFB731BA24A2E1CD009EDDB7 /* LoginVC.swift */,
 				AFB731BC24A2E1E4009EDDB7 /* RegisterVC.swift */,
+				AFB731B824A2E117009EDDB7 /* UserListVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -175,6 +191,7 @@
 				AF70C33324A2247100179910 /* ButtonTitleLabel.swift */,
 				AFB731C124A2E47B009EDDB7 /* InputContainerView.swift */,
 				AFB731C324A2E626009EDDB7 /* CustomTextField.swift */,
+				AF57DF5C24A33D6F006FD439 /* UserListCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -348,14 +365,17 @@
 				AF8C1E9924A04C15000FAB15 /* MikeButtonView.swift in Sources */,
 				AFB731BF24A2E2B0009EDDB7 /* Extension.swift in Sources */,
 				AF57DF5924A30C3D006FD439 /* LoginViewModel.swift in Sources */,
+				AF57DF6124A34BEE006FD439 /* UserModel.swift in Sources */,
 				AF57DF5624A30975006FD439 /* RegisterViewModel.swift in Sources */,
 				AFB731C424A2E626009EDDB7 /* CustomTextField.swift in Sources */,
+				AF57DF5D24A33D6F006FD439 /* UserListCell.swift in Sources */,
 				AF85EACF249F701F00D02D71 /* MainVC.swift in Sources */,
 				AF70C33424A2247100179910 /* ButtonTitleLabel.swift in Sources */,
 				AFB731BD24A2E1E4009EDDB7 /* RegisterVC.swift in Sources */,
 				AF85EABB249F6ECA00D02D71 /* AppDelegate.swift in Sources */,
 				AF85EABD249F6ECA00D02D71 /* SceneDelegate.swift in Sources */,
 				AFB731C224A2E47B009EDDB7 /* InputContainerView.swift in Sources */,
+				AF57DF5F24A34B5F006FD439 /* ConversationService.swift in Sources */,
 				AF85EAD4249F827900D02D71 /* LanguageData.swift in Sources */,
 				CE82E03B24A09A1700D75C78 /* TextVC.swift in Sources */,
 				AFB731B924A2E117009EDDB7 /* UserListVC.swift in Sources */,

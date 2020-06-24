@@ -19,6 +19,10 @@ struct AuthService {
   static let shared = AuthService()
   private init() { }
   
+  func loginUser(withEmail email: String, password: String, completion: AuthDataResultCallback?) {
+    Auth.auth().signIn(withEmail: email, password: password, completion: completion)
+  }
+  
   func createUser(registerInfoDatas: RegisterInfoDatas, completion: ((Error?) -> Void)?) {
     Auth.auth().createUser(
       withEmail: registerInfoDatas.email,

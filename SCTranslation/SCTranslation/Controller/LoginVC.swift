@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginVC: UIViewController {
   
@@ -92,7 +93,26 @@ class LoginVC: UIViewController {
     configureTextFieldEvent()
   }
   
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    
+    authCheckUser()
+  }
+  
   // MARK: - Helpers
+  
+  func userListVCPresent() {
+    let userListVC = UserListVC()
+    let navi = UINavigationController(rootViewController: userListVC)
+    navi.modalPresentationStyle = .fullScreen
+    present(navi, animated: true)
+  }
+  
+  func authCheckUser() {
+    if Auth.auth().currentUser?.uid != nil {
+      userListVCPresent()
+    }
+  }
   
   func configureTextFieldEvent() {
     [emailTextField, passwordTextField].forEach {
@@ -149,7 +169,16 @@ class LoginVC: UIViewController {
   // MARK: - Selectors
   
   @objc func handleLogin() {
+    guard let email = emailTextField.text else { return }
+    guard let password = passwordTextField.text else { return }
     
+    AuthService.shared.loginUser(withEmail: email, password: password) { (result, error) in
+      if let error = error {
+        print(#function, "DEBUG: ", error.localizedDescription)
+        return
+      }
+      self.userListVCPresent()
+    }
   }
   
   @objc func handleJoin() {

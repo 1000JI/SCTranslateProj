@@ -134,9 +134,10 @@ class RegisterVC: UIViewController {
     
     AuthService.shared.createUser(registerInfoDatas: registerInfoDatas) { error in
       if let error = error {
-        print(error.localizedDescription)
+        print(#function, " DEBUG: \(error.localizedDescription))")
         return
       }
+      self.dismiss(animated: true, completion: nil)
     }
   }
   
