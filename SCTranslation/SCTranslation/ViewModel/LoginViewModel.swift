@@ -9,11 +9,11 @@
 import Foundation
 
 struct LoginViewModel {
-  var id: String?
+  var email: String?
   var password: String?
   
   var isNotEmpty: Bool {
-    return id?.isEmpty == false &&
+    return email?.isEmpty == false &&
       password?.isEmpty == false
   }
 }

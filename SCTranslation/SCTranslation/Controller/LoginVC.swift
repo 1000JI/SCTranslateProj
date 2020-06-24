@@ -20,9 +20,9 @@ class LoginVC: UIViewController {
     return iv
   }()
   
-  private lazy var idContainerView: UIView = {
+  private lazy var emailContainerView: UIView = {
     let containerView = InputContainerView(image: #imageLiteral(resourceName: "ic_mail_outline_white_2x"),
-                                           textField: idTextField)
+                                           textField: emailTextField)
     return containerView
   }()
   
@@ -32,7 +32,7 @@ class LoginVC: UIViewController {
     return containerView
   }()
   
-  private let idTextField = CustomTextField(placeholder: "Id")
+  private let emailTextField = CustomTextField(placeholder: "Email")
   
   private let passwordTextField: CustomTextField = {
     let tf = CustomTextField(placeholder: "password")
@@ -95,7 +95,7 @@ class LoginVC: UIViewController {
   // MARK: - Helpers
   
   func configureTextFieldEvent() {
-    [idTextField, passwordTextField].forEach {
+    [emailTextField, passwordTextField].forEach {
       $0.addTarget(self, action: #selector(handleCheckEmpty(_:)), for: .editingChanged)
     }
   }
@@ -117,7 +117,7 @@ class LoginVC: UIViewController {
     }
     
     let stackView = UIStackView(arrangedSubviews: [
-      idContainerView,
+      emailContainerView,
       passwordContainerView,
       loginButton
     ])
@@ -163,8 +163,8 @@ class LoginVC: UIViewController {
   }
   
   @objc func handleCheckEmpty(_ sender: UITextField) {
-    if sender == idTextField {
-      viewModel.id = sender.text
+    if sender == emailTextField {
+      viewModel.email = sender.text
     } else if sender == passwordTextField {
       viewModel.password = sender.text
     }
