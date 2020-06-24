@@ -30,10 +30,6 @@
 		AFB731C224A2E47B009EDDB7 /* InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB731C124A2E47B009EDDB7 /* InputContainerView.swift */; };
 		AFB731C424A2E626009EDDB7 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB731C324A2E626009EDDB7 /* CustomTextField.swift */; };
 		B391BCBDAA753032AD84DE75 /* Pods_SCTranslation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 086A8126B541808160893102 /* Pods_SCTranslation.framework */; };
-		CE19D6E724A22B600099C405 /* TalkVBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19D6E624A22B600099C405 /* TalkVBottom.swift */; };
-		CE19D6EA24A26D020099C405 /* TalkCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19D6E924A26D020099C405 /* TalkCustomCell.swift */; };
-		CE3A28D824A2112000473E1E /* TalkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3A28D724A2112000473E1E /* TalkVC.swift */; };
-		CE3A28DA24A2162400473E1E /* TalkVTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3A28D924A2162400473E1E /* TalkVTop.swift */; };
 		CE82E03B24A09A1700D75C78 /* TextVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82E03A24A09A1700D75C78 /* TextVC.swift */; };
 		CE82E03D24A09A4900D75C78 /* LanguageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82E03C24A09A4900D75C78 /* LanguageVC.swift */; };
 /* End PBXBuildFile section */
@@ -60,19 +56,12 @@
 		AF8C1E9324A03CEF000FAB15 /* VoiceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceVC.swift; sourceTree = "<group>"; };
 		AF8C1E9624A03E14000FAB15 /* TranslateBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateBarView.swift; sourceTree = "<group>"; };
 		AF8C1E9824A04C15000FAB15 /* MikeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MikeButtonView.swift; sourceTree = "<group>"; };
-
-		CE19D6E624A22B600099C405 /* TalkVBottom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkVBottom.swift; sourceTree = "<group>"; };
-		CE19D6E924A26D020099C405 /* TalkCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkCustomCell.swift; sourceTree = "<group>"; };
-		CE3A28D724A2112000473E1E /* TalkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkVC.swift; sourceTree = "<group>"; };
-		CE3A28D924A2162400473E1E /* TalkVTop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkVTop.swift; sourceTree = "<group>"; };
-
 		AFB731B824A2E117009EDDB7 /* UserListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListVC.swift; sourceTree = "<group>"; };
 		AFB731BA24A2E1CD009EDDB7 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		AFB731BC24A2E1E4009EDDB7 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		AFB731BE24A2E2B0009EDDB7 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		AFB731C124A2E47B009EDDB7 /* InputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputContainerView.swift; sourceTree = "<group>"; };
 		AFB731C324A2E626009EDDB7 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
-
 		CE82E03A24A09A1700D75C78 /* TextVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextVC.swift; sourceTree = "<group>"; };
 		CE82E03C24A09A4900D75C78 /* LanguageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,7 +119,6 @@
 				AF8C1E9524A03DAF000FAB15 /* View */,
 				AF57DF5724A30979006FD439 /* ViewModel */,
 				AF85EAD2249F825C00D02D71 /* Data */,
-				CE19D6E824A26CA40099C405 /* CustomCell */,
 				AF85EAD0249F710800D02D71 /* Controller */,
 				AF59F25824A0FD5900A0BC64 /* Service */,
 				AFB731C024A2E2C5009EDDB7 /* Utils */,
@@ -148,13 +136,9 @@
 				AF8C1E9324A03CEF000FAB15 /* VoiceVC.swift */,
 				CE82E03A24A09A1700D75C78 /* TextVC.swift */,
 				CE82E03C24A09A4900D75C78 /* LanguageVC.swift */,
-
-				CE3A28D724A2112000473E1E /* TalkVC.swift */,
-
 				AFB731B824A2E117009EDDB7 /* UserListVC.swift */,
 				AFB731BA24A2E1CD009EDDB7 /* LoginVC.swift */,
 				AFB731BC24A2E1E4009EDDB7 /* RegisterVC.swift */,
-
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -185,34 +169,19 @@
 				AF8C1E9824A04C15000FAB15 /* MikeButtonView.swift */,
 				AF8C1E9624A03E14000FAB15 /* TranslateBarView.swift */,
 				AF545DCF24A08A5C0017C937 /* TranslateTextView.swift */,
-
-				CE3A28D924A2162400473E1E /* TalkVTop.swift */,
-				CE19D6E624A22B600099C405 /* TalkVBottom.swift */,
-
 				AF70C33324A2247100179910 /* ButtonTitleLabel.swift */,
 				AFB731C124A2E47B009EDDB7 /* InputContainerView.swift */,
 				AFB731C324A2E626009EDDB7 /* CustomTextField.swift */,
-
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-
-		CE19D6E824A26CA40099C405 /* CustomCell */ = {
-			isa = PBXGroup;
-			children = (
-				CE19D6E924A26D020099C405 /* TalkCustomCell.swift */,
-			);
-			name = CustomCell;
-			path = ..;
-
 		AFB731C024A2E2C5009EDDB7 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				AFB731BE24A2E2B0009EDDB7 /* Extension.swift */,
 			);
 			path = Utils;
-
 			sourceTree = "<group>";
 		};
 		DA907087996514511E663FF6 /* Frameworks */ = {
@@ -366,10 +335,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE19D6EA24A26D020099C405 /* TalkCustomCell.swift in Sources */,
-				CE3A28DA24A2162400473E1E /* TalkVTop.swift in Sources */,
-				CE19D6E724A22B600099C405 /* TalkVBottom.swift in Sources */,
-				CE3A28D824A2112000473E1E /* TalkVC.swift in Sources */,
 				AF59F25724A0FD1400A0BC64 /* TranslateService.swift in Sources */,
 				CE82E03D24A09A4900D75C78 /* LanguageVC.swift in Sources */,
 				AFB731BB24A2E1CD009EDDB7 /* LoginVC.swift in Sources */,
@@ -535,11 +500,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-
-				DEVELOPMENT_TEAM = FH4GN29FPK;
-
 				DEVELOPMENT_TEAM = ZLCDRXJTXW;
-
 				INFOPLIST_FILE = "SCTranslation/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -559,11 +520,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-
-				DEVELOPMENT_TEAM = FH4GN29FPK;
-
 				DEVELOPMENT_TEAM = ZLCDRXJTXW;
-
 				INFOPLIST_FILE = "SCTranslation/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
