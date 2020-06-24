@@ -10,6 +10,7 @@
 		AF545DD024A08A5C0017C937 /* TranslateTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF545DCF24A08A5C0017C937 /* TranslateTextView.swift */; };
 		AF57DF5624A30975006FD439 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF57DF5524A30975006FD439 /* RegisterViewModel.swift */; };
 		AF57DF5924A30C3D006FD439 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF57DF5824A30C3D006FD439 /* LoginViewModel.swift */; };
+		AF57DF5B24A31136006FD439 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF57DF5A24A31136006FD439 /* AuthService.swift */; };
 		AF59F25724A0FD1400A0BC64 /* TranslateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF59F25624A0FD1400A0BC64 /* TranslateService.swift */; };
 		AF70C33424A2247100179910 /* ButtonTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF70C33324A2247100179910 /* ButtonTitleLabel.swift */; };
 		AF80A86E24A10EDC00852D71 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF80A86D24A10EDC00852D71 /* GoogleService-Info.plist */; };
@@ -41,6 +42,7 @@
 		AF545DCF24A08A5C0017C937 /* TranslateTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateTextView.swift; sourceTree = "<group>"; };
 		AF57DF5524A30975006FD439 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		AF57DF5824A30C3D006FD439 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		AF57DF5A24A31136006FD439 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		AF59F25624A0FD1400A0BC64 /* TranslateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateService.swift; sourceTree = "<group>"; };
 		AF70C33324A2247100179910 /* ButtonTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTitleLabel.swift; sourceTree = "<group>"; };
 		AF80A86D24A10EDC00852D71 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				AF59F25624A0FD1400A0BC64 /* TranslateService.swift */,
+				AF57DF5A24A31136006FD439 /* AuthService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -212,8 +215,8 @@
 				AF85EAB3249F6ECA00D02D71 /* Sources */,
 				AF85EAB4249F6ECA00D02D71 /* Frameworks */,
 				AF85EAB5249F6ECA00D02D71 /* Resources */,
-				418B3ED95CB7696E255F220F /* [CP] Embed Pods Frameworks */,
-				034C85CAA05D98CCED5813DB /* [CP] Copy Pods Resources */,
+				710C763AE6BB67298C20D816 /* [CP] Embed Pods Frameworks */,
+				688DAAAFC713B8D5E329A631 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -272,23 +275,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		034C85CAA05D98CCED5813DB /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SCTranslation/Pods-SCTranslation-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SCTranslation/Pods-SCTranslation-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SCTranslation/Pods-SCTranslation-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		1B257E7FB259C6270D4D30E0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -311,7 +297,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		418B3ED95CB7696E255F220F /* [CP] Embed Pods Frameworks */ = {
+		688DAAAFC713B8D5E329A631 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SCTranslation/Pods-SCTranslation-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SCTranslation/Pods-SCTranslation-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SCTranslation/Pods-SCTranslation-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		710C763AE6BB67298C20D816 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -341,6 +344,7 @@
 				AF545DD024A08A5C0017C937 /* TranslateTextView.swift in Sources */,
 				AF8C1E9724A03E14000FAB15 /* TranslateBarView.swift in Sources */,
 				AF8C1E9424A03CEF000FAB15 /* VoiceVC.swift in Sources */,
+				AF57DF5B24A31136006FD439 /* AuthService.swift in Sources */,
 				AF8C1E9924A04C15000FAB15 /* MikeButtonView.swift in Sources */,
 				AFB731BF24A2E2B0009EDDB7 /* Extension.swift in Sources */,
 				AF57DF5924A30C3D006FD439 /* LoginViewModel.swift in Sources */,

@@ -28,8 +28,8 @@ class RegisterVC: UIViewController {
     return button
   }()
   
-  private lazy var idContainerView: UIView = {
-    return InputContainerView(image: #imageLiteral(resourceName: "ic_mail_outline_white_2x"), textField: idTextField)
+  private lazy var emailContainerView: UIView = {
+    return InputContainerView(image: #imageLiteral(resourceName: "ic_mail_outline_white_2x"), textField: emailTextField)
   }()
   
   private lazy var usernameContainerView: UIView = {
@@ -40,7 +40,7 @@ class RegisterVC: UIViewController {
     return InputContainerView(image: #imageLiteral(resourceName: "ic_lock_outline_white_2x"), textField: passwordTextField)
   }()
   
-  private let idTextField = CustomTextField(placeholder: "Id")
+  private let emailTextField = CustomTextField(placeholder: "Email")
   private let usernameTextField = CustomTextField(placeholder: "Username")
   private let passwordTextField: CustomTextField = {
     let tf = CustomTextField(placeholder: "password")
@@ -94,7 +94,7 @@ class RegisterVC: UIViewController {
       .top(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 12)
     
     let stackView = UIStackView(arrangedSubviews: [
-      idContainerView,
+      emailContainerView,
       passwordContainerView,
       usernameContainerView,
       signUpButton
@@ -109,10 +109,10 @@ class RegisterVC: UIViewController {
   }
   
   func configureTextFieldEvent() {
-    [idTextField, passwordTextField, usernameTextField].forEach {
+    [emailTextField, passwordTextField, usernameTextField].forEach {
       $0.addTarget(self, action: #selector(handleCheckEmpty(_:)), for: .editingChanged)
     }
-    idTextField.becomeFirstResponder()
+    emailTextField.becomeFirstResponder()
   }
   
   // MARK: - Selectors
@@ -122,12 +122,27 @@ class RegisterVC: UIViewController {
   }
   
   @objc func handleRegister() {
+    guard let email = emailTextField.text else { return }
+    guard let password = passwordTextField.text else { return }
+    guard let username = usernameTextField.text else { return }
     
+    let registerInfoDatas = RegisterInfoDatas(
+      email: email,
+      password: password,
+      username: username
+    )
+    
+    AuthService.shared.createUser(registerInfoDatas: registerInfoDatas) { error in
+      if let error = error {
+        print(error.localizedDescription)
+        return
+      }
+    }
   }
   
   @objc func handleCheckEmpty(_ sender: UITextField) {
-    if sender == idTextField {
-      viewModel.id = sender.text
+    if sender == emailTextField {
+      viewModel.email = sender.text
     } else if sender == passwordTextField {
       viewModel.password = sender.text
     } else if sender == usernameTextField {

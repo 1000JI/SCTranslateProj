@@ -8,5 +8,9 @@ target 'SCTranslation' do
   # Pods for SCTranslation
   pod 'Firebase/Analytics'
   pod 'Firebase/MLNLTranslate'
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Storage'
 
 end
