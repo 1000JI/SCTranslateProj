@@ -15,7 +15,7 @@ class MainVC: UIViewController {
   lazy var textBtn: UIButton = {
     let button = UIButton(type: .system)
     button.setTitle("TEXT", for: .normal)
-    button.setTitleColor(.white, for: .normal)
+    button.setTitleColor(.black, for: .normal)
     button.backgroundColor = .systemYellow
     button.titleLabel?.font = .boldSystemFont(ofSize: 32)
     button.layer.cornerRadius = 28
@@ -26,7 +26,7 @@ class MainVC: UIViewController {
   lazy var voiceBtn: UIButton = {
     let button = UIButton(type: .system)
     button.setTitle("VOICE", for: .normal)
-    button.setTitleColor(.white, for: .normal)
+    button.setTitleColor(.black, for: .normal)
     button.backgroundColor = .systemPurple
     button.titleLabel?.font = .boldSystemFont(ofSize: 32)
     button.layer.cornerRadius = 28
@@ -37,7 +37,7 @@ class MainVC: UIViewController {
   lazy var chatBtn: UIButton = {
     let button = UIButton(type: .system)
     button.setTitle("CHAT", for: .normal)
-    button.setTitleColor(.white, for: .normal)
+    button.setTitleColor(.black, for: .normal)
     button.backgroundColor = .systemGreen
     button.titleLabel?.font = .boldSystemFont(ofSize: 32)
     button.layer.cornerRadius = 28
@@ -75,14 +75,7 @@ class MainVC: UIViewController {
   // MARK: - Setup
   
   func setupLayout() {
-    let gradientLayer = CAGradientLayer()
-    gradientLayer.frame = view.frame
-    gradientLayer.locations = [0, 0.5, 1]
-    
-    gradientLayer.colors = [ UIColor.systemYellow.cgColor, UIColor.systemPurple.cgColor, UIColor.systemGreen.cgColor ]
-    gradientLayer.shouldRasterize = true
-    
-    view.layer.addSublayer(gradientLayer)
+    setupGradientLayer()
     
     [textBtn, voiceBtn, chatBtn].forEach {
       view.addSubview($0)
@@ -166,7 +159,7 @@ class MainVC: UIViewController {
   }
   
   @objc func handleChatVC(_ sender: UIButton) {
-    animateLabel(chatLabel, toVC: UIViewController())
+    animateLabel(chatLabel, toVC: LoginVC())
   }
   
 }
