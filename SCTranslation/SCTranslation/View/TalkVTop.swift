@@ -2,18 +2,44 @@
 //  TalkVTop.swift
 //  SCTranslation
 //
-//  Created by 성단빈 on 2020/06/23.
+//  Created by 성단빈 on 2020/06/24.
 //  Copyright © 2020 DanBin, JiWoon. All rights reserved.
 //
 
 import UIKit
 
+protocol TalkVTopDelegate: class {
+  func handleLanguage(with language: Language, isFrom: Bool)
+  func handleChange(from: Language, to: Language)
+  func handleDismiss()
+}
+
 class TalkVTop: UIView {
   // MARK: - Properties
+  weak var delegate: TalkVTopDelegate?
+  
+  var toggleChange: Bool = false
+  
+  var configureLanguage: Language?
+  
+  var fromLanguageData: Language? = dataLanguages[0] {
+    didSet {
+      guard let contury = fromLanguageData?.country else { return }
+      fromLanguageBtn.setTitle("\(contury)⇣", for: .normal)
+    }
+  }
+  var toLanguageData: Language? = dataLanguages[1] {
+    didSet {
+      guard let contury = toLanguageData?.country else { return }
+      toLanguageBtn.setTitle("\(contury)⇣", for: .normal)
+    }
+  }
+  
   lazy var dismissBtn: UIButton = {
     let button = UIButton(type: .system)
     button.setImage(UIImage(systemName: "multiply"), for: .normal)
     button.tintColor = .black
+    button.addTarget(self, action: #selector(handleDismiss), for: .touchUpInside)
     return button
   }()
   
@@ -34,7 +60,7 @@ class TalkVTop: UIView {
     button.setTitleColor(.black, for: .normal)
     button.backgroundColor = .clear
     button.titleLabel?.font = .systemFont(ofSize: 18)
-//    button.addTarget(self, action: #selector(handleFromLanguage), for: .touchUpInside)
+    button.addTarget(self, action: #selector(handleFromLanguage), for: .touchUpInside)
     return button
   }()
   
@@ -46,7 +72,7 @@ class TalkVTop: UIView {
     button.setTitleColor(.black, for: .normal)
     button.backgroundColor = .clear
     button.titleLabel?.font = .systemFont(ofSize: 18)
-//    button.addTarget(self, action: #selector(handleToLanguage), for: .touchUpInside)
+    button.addTarget(self, action: #selector(handleToLanguage), for: .touchUpInside)
     return button
   }()
   
@@ -59,23 +85,10 @@ class TalkVTop: UIView {
     button.layer.cornerRadius = 60 / 4
     button.clipsToBounds = true
     button.backgroundColor = .clear
-//    button.titleLabel?.font = .systemFont(ofSize: 18)
-//    button.addTarget(self, action: #selector(handleChangeLanguage), for: .touchUpInside)
+    //    button.titleLabel?.font = .systemFont(ofSize: 18)
+    button.addTarget(self, action: #selector(handleChangeLanguage), for: .touchUpInside)
     return button
   }()
-  
-  var fromLanguageData: Language? = dataLanguages[0] {
-    didSet {
-      guard let contury = fromLanguageData?.country else { return }
-      fromLanguageBtn.setTitle("\(contury)⇣", for: .normal)
-    }
-  }
-  var toLanguageData: Language? = dataLanguages[1] {
-    didSet {
-      guard let contury = toLanguageData?.country else { return }
-      toLanguageBtn.setTitle("\(contury)⇣", for: .normal)
-    }
-  }
   
   // MARK: - LifeCycle
   override init(frame: CGRect) {
@@ -135,5 +148,32 @@ class TalkVTop: UIView {
   
   
   // MARK: - Selectors
+  @objc func handleDismiss() {
+    delegate?.handleDismiss()
+  }
   
+  @objc func handleFromLanguage(_ sender: UIButton) {
+    guard let data = fromLanguageData else { return }
+    delegate?.handleLanguage(with: data, isFrom: true)
+  }
+  
+  @objc func handleToLanguage(_ sender: UIButton) {
+    guard let data = toLanguageData else { return }
+    delegate?.handleLanguage(with: data, isFrom: false)
+  }
+  
+  @objc func handleChangeLanguage(_ sender: UIButton) {
+    toggleChange.toggle()
+    
+    let tempLanguage = fromLanguageData
+    fromLanguageData = toLanguageData
+    toLanguageData = tempLanguage
+    
+    delegate?.handleChange(from: fromLanguageData!, to: toLanguageData!)
+    
+    UIView.animate(withDuration: 0.3) {
+      if self.toggleChange { self.changeLanguageBtn.transform = CGAffineTransform(rotationAngle: .pi) }
+      else { self.changeLanguageBtn.transform = .identity }
+    }
+  }
 }

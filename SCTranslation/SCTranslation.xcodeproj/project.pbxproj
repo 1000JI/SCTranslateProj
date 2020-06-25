@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		AF27E65A24A38CDF0049C23F /* Loading.json in Resources */ = {isa = PBXBuildFile; fileRef = AF27E65924A38CDF0049C23F /* Loading.json */; };
-		AF27E65D24A38F230049C23F /* TalkVBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF27E65B24A38F230049C23F /* TalkVBottom.swift */; };
-		AF27E65E24A38F230049C23F /* TalkVTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF27E65C24A38F230049C23F /* TalkVTop.swift */; };
 		AF27E66424A38F580049C23F /* TalkMyCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF27E66224A38F580049C23F /* TalkMyCustomCell.swift */; };
 		AF27E66524A38F580049C23F /* TalkUserCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF27E66324A38F580049C23F /* TalkUserCustomCell.swift */; };
 		AF545DD024A08A5C0017C937 /* TranslateTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF545DCF24A08A5C0017C937 /* TranslateTextView.swift */; };
@@ -28,6 +26,8 @@
 		AF6A3AD324A471F8000EE214 /* UserListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A3AD224A471F8000EE214 /* UserListVC.swift */; };
 		AF6A3AD524A4722F000EE214 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A3AD424A4722F000EE214 /* LoginVC.swift */; };
 		AF6A3AD724A4724A000EE214 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A3AD624A4724A000EE214 /* RegisterVC.swift */; };
+		AF6A3ADA24A47421000EE214 /* TalkVBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A3AD824A47420000EE214 /* TalkVBottom.swift */; };
+		AF6A3ADB24A47421000EE214 /* TalkVTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A3AD924A47420000EE214 /* TalkVTop.swift */; };
 		AF70C33424A2247100179910 /* ButtonTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF70C33324A2247100179910 /* ButtonTitleLabel.swift */; };
 		AF80A86E24A10EDC00852D71 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF80A86D24A10EDC00852D71 /* GoogleService-Info.plist */; };
 		AF85EABB249F6ECA00D02D71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF85EABA249F6ECA00D02D71 /* AppDelegate.swift */; };
@@ -51,8 +51,6 @@
 		A79FB2A078277B48E85EEF47 /* Pods-SCTranslation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCTranslation.release.xcconfig"; path = "Target Support Files/Pods-SCTranslation/Pods-SCTranslation.release.xcconfig"; sourceTree = "<group>"; };
 		AD0435A19CE9FD0C80A15A57 /* Pods-SCTranslation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCTranslation.debug.xcconfig"; path = "Target Support Files/Pods-SCTranslation/Pods-SCTranslation.debug.xcconfig"; sourceTree = "<group>"; };
 		AF27E65924A38CDF0049C23F /* Loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Loading.json; sourceTree = "<group>"; };
-		AF27E65B24A38F230049C23F /* TalkVBottom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TalkVBottom.swift; path = "../../../../../../Downloads/SCTranslateProj 2/SCTranslation/SCTranslation/View/TalkVBottom.swift"; sourceTree = "<group>"; };
-		AF27E65C24A38F230049C23F /* TalkVTop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TalkVTop.swift; path = "../../../../../../Downloads/SCTranslateProj 2/SCTranslation/SCTranslation/View/TalkVTop.swift"; sourceTree = "<group>"; };
 		AF27E66224A38F580049C23F /* TalkMyCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkMyCustomCell.swift; sourceTree = "<group>"; };
 		AF27E66324A38F580049C23F /* TalkUserCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkUserCustomCell.swift; sourceTree = "<group>"; };
 		AF545DCF24A08A5C0017C937 /* TranslateTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateTextView.swift; sourceTree = "<group>"; };
@@ -71,6 +69,8 @@
 		AF6A3AD224A471F8000EE214 /* UserListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListVC.swift; sourceTree = "<group>"; };
 		AF6A3AD424A4722F000EE214 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		AF6A3AD624A4724A000EE214 /* RegisterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		AF6A3AD824A47420000EE214 /* TalkVBottom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkVBottom.swift; sourceTree = "<group>"; };
+		AF6A3AD924A47420000EE214 /* TalkVTop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkVTop.swift; sourceTree = "<group>"; };
 		AF70C33324A2247100179910 /* ButtonTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTitleLabel.swift; sourceTree = "<group>"; };
 		AF80A86D24A10EDC00852D71 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AF85EAB7249F6ECA00D02D71 /* SCTranslation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCTranslation.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -238,8 +238,8 @@
 				AFB731C124A2E47B009EDDB7 /* InputContainerView.swift */,
 				AFB731C324A2E626009EDDB7 /* CustomTextField.swift */,
 				AF57DF5C24A33D6F006FD439 /* UserListCell.swift */,
-				AF27E65B24A38F230049C23F /* TalkVBottom.swift */,
-				AF27E65C24A38F230049C23F /* TalkVTop.swift */,
+				AF6A3AD824A47420000EE214 /* TalkVBottom.swift */,
+				AF6A3AD924A47420000EE214 /* TalkVTop.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -405,16 +405,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF27E65E24A38F230049C23F /* TalkVTop.swift in Sources */,
 				AF59F25724A0FD1400A0BC64 /* TranslateService.swift in Sources */,
 				AF545DD024A08A5C0017C937 /* TranslateTextView.swift in Sources */,
-				AF27E65D24A38F230049C23F /* TalkVBottom.swift in Sources */,
 				AF27E66524A38F580049C23F /* TalkUserCustomCell.swift in Sources */,
 				AF27E66424A38F580049C23F /* TalkMyCustomCell.swift in Sources */,
 				AF8C1E9724A03E14000FAB15 /* TranslateBarView.swift in Sources */,
 				AF6A3AD324A471F8000EE214 /* UserListVC.swift in Sources */,
 				AF8C1E9424A03CEF000FAB15 /* VoiceVC.swift in Sources */,
 				AF6A3AD724A4724A000EE214 /* RegisterVC.swift in Sources */,
+				AF6A3ADA24A47421000EE214 /* TalkVBottom.swift in Sources */,
 				AF57DF5B24A31136006FD439 /* AuthService.swift in Sources */,
 				AF8C1E9924A04C15000FAB15 /* MikeButtonView.swift in Sources */,
 				AFB731BF24A2E2B0009EDDB7 /* Extension.swift in Sources */,
@@ -422,6 +421,7 @@
 				AF6A3ACC24A46DED000EE214 /* TalkVC.swift in Sources */,
 				AF63D20D24A46C8E007AC892 /* TextVC.swift in Sources */,
 				AF57DF6124A34BEE006FD439 /* UserModel.swift in Sources */,
+				AF6A3ADB24A47421000EE214 /* TalkVTop.swift in Sources */,
 				AF6A3AD524A4722F000EE214 /* LoginVC.swift in Sources */,
 				AF57DF5624A30975006FD439 /* RegisterViewModel.swift in Sources */,
 				AFB731C424A2E626009EDDB7 /* CustomTextField.swift in Sources */,
