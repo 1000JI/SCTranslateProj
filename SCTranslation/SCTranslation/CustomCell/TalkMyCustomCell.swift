@@ -9,7 +9,7 @@
 import UIKit
 
 class TalkMyCustomCell: UITableViewCell {
-  let identifier = "FromCellID"
+  static let identifier = "FromCellID"
   
   lazy var myComment: UILabel = {
     let label = UILabel()

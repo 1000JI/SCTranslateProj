@@ -22,6 +22,7 @@
 		AF57DF6124A34BEE006FD439 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF57DF6024A34BEE006FD439 /* UserModel.swift */; };
 		AF57DF6824A38646006FD439 /* Bazzi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF57DF6724A38646006FD439 /* Bazzi.ttf */; };
 		AF59F25724A0FD1400A0BC64 /* TranslateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF59F25624A0FD1400A0BC64 /* TranslateService.swift */; };
+		AF63D1EE24A43900007AC892 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF63D1ED24A43900007AC892 /* MessageModel.swift */; };
 		AF70C33424A2247100179910 /* ButtonTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF70C33324A2247100179910 /* ButtonTitleLabel.swift */; };
 		AF80A86E24A10EDC00852D71 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF80A86D24A10EDC00852D71 /* GoogleService-Info.plist */; };
 		AF85EABB249F6ECA00D02D71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF85EABA249F6ECA00D02D71 /* AppDelegate.swift */; };
@@ -64,6 +65,7 @@
 		AF57DF6024A34BEE006FD439 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		AF57DF6724A38646006FD439 /* Bazzi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bazzi.ttf; sourceTree = "<group>"; };
 		AF59F25624A0FD1400A0BC64 /* TranslateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateService.swift; sourceTree = "<group>"; };
+		AF63D1ED24A43900007AC892 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		AF70C33324A2247100179910 /* ButtonTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTitleLabel.swift; sourceTree = "<group>"; };
 		AF80A86D24A10EDC00852D71 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AF85EAB7249F6ECA00D02D71 /* SCTranslation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCTranslation.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				AF57DF6024A34BEE006FD439 /* UserModel.swift */,
+				AF63D1ED24A43900007AC892 /* MessageModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 				AF85EABB249F6ECA00D02D71 /* AppDelegate.swift in Sources */,
 				AF85EABD249F6ECA00D02D71 /* SceneDelegate.swift in Sources */,
 				AFB731C224A2E47B009EDDB7 /* InputContainerView.swift in Sources */,
+				AF63D1EE24A43900007AC892 /* MessageModel.swift in Sources */,
 				AF57DF5F24A34B5F006FD439 /* ConversationService.swift in Sources */,
 				AF85EAD4249F827900D02D71 /* LanguageData.swift in Sources */,
 				CE82E03B24A09A1700D75C78 /* TextVC.swift in Sources */,
