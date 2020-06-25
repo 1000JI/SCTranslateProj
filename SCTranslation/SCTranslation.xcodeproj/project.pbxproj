@@ -28,6 +28,7 @@
 		AF6A3AD724A4724A000EE214 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A3AD624A4724A000EE214 /* RegisterVC.swift */; };
 		AF6A3ADA24A47421000EE214 /* TalkVBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A3AD824A47420000EE214 /* TalkVBottom.swift */; };
 		AF6A3ADB24A47421000EE214 /* TalkVTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A3AD924A47420000EE214 /* TalkVTop.swift */; };
+		AF6A3ADD24A48B37000EE214 /* RoundShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A3ADC24A48B37000EE214 /* RoundShadowView.swift */; };
 		AF70C33424A2247100179910 /* ButtonTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF70C33324A2247100179910 /* ButtonTitleLabel.swift */; };
 		AF80A86E24A10EDC00852D71 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF80A86D24A10EDC00852D71 /* GoogleService-Info.plist */; };
 		AF85EABB249F6ECA00D02D71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF85EABA249F6ECA00D02D71 /* AppDelegate.swift */; };
@@ -71,6 +72,7 @@
 		AF6A3AD624A4724A000EE214 /* RegisterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		AF6A3AD824A47420000EE214 /* TalkVBottom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkVBottom.swift; sourceTree = "<group>"; };
 		AF6A3AD924A47420000EE214 /* TalkVTop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkVTop.swift; sourceTree = "<group>"; };
+		AF6A3ADC24A48B37000EE214 /* RoundShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundShadowView.swift; sourceTree = "<group>"; };
 		AF70C33324A2247100179910 /* ButtonTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTitleLabel.swift; sourceTree = "<group>"; };
 		AF80A86D24A10EDC00852D71 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AF85EAB7249F6ECA00D02D71 /* SCTranslation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCTranslation.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -237,6 +239,7 @@
 				AF70C33324A2247100179910 /* ButtonTitleLabel.swift */,
 				AFB731C124A2E47B009EDDB7 /* InputContainerView.swift */,
 				AFB731C324A2E626009EDDB7 /* CustomTextField.swift */,
+				AF6A3ADC24A48B37000EE214 /* RoundShadowView.swift */,
 				AF57DF5C24A33D6F006FD439 /* UserListCell.swift */,
 				AF6A3AD824A47420000EE214 /* TalkVBottom.swift */,
 				AF6A3AD924A47420000EE214 /* TalkVTop.swift */,
@@ -422,6 +425,7 @@
 				AF63D20D24A46C8E007AC892 /* TextVC.swift in Sources */,
 				AF57DF6124A34BEE006FD439 /* UserModel.swift in Sources */,
 				AF6A3ADB24A47421000EE214 /* TalkVTop.swift in Sources */,
+				AF6A3ADD24A48B37000EE214 /* RoundShadowView.swift in Sources */,
 				AF6A3AD524A4722F000EE214 /* LoginVC.swift in Sources */,
 				AF57DF5624A30975006FD439 /* RegisterViewModel.swift in Sources */,
 				AFB731C424A2E626009EDDB7 /* CustomTextField.swift in Sources */,

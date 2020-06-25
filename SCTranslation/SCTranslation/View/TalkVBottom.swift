@@ -20,8 +20,9 @@ class TalkVBottom: UIView {
   
   let textView: UITextView = {
     let tv = UITextView()
-    tv.font = .boldSystemFont(ofSize: 18)
+    tv.font = .systemFont(ofSize: 18)
     tv.text = ""
+    tv.isScrollEnabled = false
     return tv
   }()
   
@@ -51,7 +52,7 @@ class TalkVBottom: UIView {
   
   // MARK: - Helpers
   private func setupLayout() {
-    autoresizingMask = .flexibleHeight
+//    autoresizingMask = .flexibleHeight
     
     [textView, returnKey].forEach {
       addSubview($0)
@@ -69,19 +70,22 @@ class TalkVBottom: UIView {
     //      returnKey.centerYAnchor.constraint(equalTo: textView.centerYAnchor),
     //      returnKey.leadingAnchor.constraint(equalTo: textView.trailingAnchor, constant: 5)
     //      ].forEach { $0.isActive = true }
+    
     returnKey.top(equalTo: topAnchor, constant: 4)
       .trailing(equalTo: trailingAnchor, constant: -8)
     returnKey.widthAnchor.constraint(equalToConstant: 50).isActive = true
     returnKey.heightAnchor.constraint(equalToConstant: 50).isActive = true
     
-    textView.top(equalTo: topAnchor, constant: 12)
-      .leading(equalTo: leadingAnchor, constant: 4)
+    textView.top(equalTo: topAnchor, constant: 8)
+      .leading(equalTo: leadingAnchor, constant: 8)
       .bottom(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -4)
       .trailing(equalTo: returnKey.leadingAnchor, constant: -4)
+    textView.heightAnchor.constraint(equalToConstant: 38).isActive = true
+//    textView.heightAnchor.constraint(lessThanOrEqualToConstant: 100).isActive = true
   }
   
   private func setupView() {
-    self.backgroundColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
+    self.backgroundColor = .systemGreen
   }
   
   private func setupTextView() {
@@ -97,6 +101,7 @@ class TalkVBottom: UIView {
   @objc func handleSendMessage() {
     guard let text = textView.text else { return }
     textView.text = ""
+    textView.resignFirstResponder()
     delegate?.inputText(text)
   }
   

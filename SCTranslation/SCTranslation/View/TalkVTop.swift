@@ -45,10 +45,10 @@ class TalkVTop: UIView {
   
   lazy var titleLabel: UILabel = {
     let label = UILabel()
-    label.text = "Talk"
+    label.text = "번역 채팅"
+    label.font = UIFont(name: "Bazzi", size: 20)
     label.textAlignment = .center
     label.textColor = .black
-    label.font = UIFont.preferredFont(forTextStyle: .title2, compatibleWith: .none)
     return label
   }()
   

@@ -11,21 +11,25 @@ import UIKit
 class TalkUserCustomCell: UITableViewCell {
   static let identifier = "ToCellID"
   
-  lazy var userComment: UILabel = {
-    let label = UILabel()
-    label.text = "Testsdfsfsdfsdfsdlkfjsdlkfjfsdfsdfsdfldkfjlsdkjflsdkjflkdsjflsdkfjlsdkfj"
+  let roundShadowUserComment = RoundShadowView()
+  let roundShadowUserCommentTranslate = RoundShadowView()
+  
+  lazy var userComment: PaddingLabel = {
+    let label = PaddingLabel()
+    label.text = "TEST"
     label.textColor = .black
-    label.backgroundColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
-    label.sizeToFit()
+    label.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+    label.adjustsFontSizeToFitWidth = true
+    
     return label
   }()
   
-  lazy var userCommentTranslate: UILabel = {
-    let label = UILabel()
-    label.text = "Testsdfssdfsdfsdfldkfjlsdkjflsdkjflkdsjflsdkfjlsdkfj"
+  lazy var userCommentTranslate: PaddingLabel = {
+    let label = PaddingLabel()
+    label.text = "TEST"
     label.textColor = .black
-    label.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
-    label.sizeToFit()
+    label.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+    label.adjustsFontSizeToFitWidth = true
     return label
   }()
   
@@ -56,7 +60,7 @@ class TalkUserCustomCell: UITableViewCell {
       
       let date = receive.timestamp.dateValue()
       let dateFormatter = DateFormatter()
-      dateFormatter.dateFormat = "hh:mm a"
+      dateFormatter.dateFormat = "HH:mm"
       
       dateLabel.text = dateFormatter.string(from: date)
       userName.text = user.username
@@ -77,7 +81,7 @@ class TalkUserCustomCell: UITableViewCell {
   }
   
   private func setupContentView() {
-    self.backgroundColor = .systemGreen
+    self.backgroundColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
   }
   
   private func setupUserComment() {
@@ -93,42 +97,66 @@ class TalkUserCustomCell: UITableViewCell {
   }
   
   private func setupLayout() {
-    [userComment, userName, userCommentTranslate, dateLabel].forEach {
+    //    [myComment, myCommentTranslate].forEach {
+    //      roundShadowView.addSubview($0)
+    //      $0.translatesAutoresizingMaskIntoConstraints = false
+    //    }
+    [roundShadowUserComment, roundShadowUserCommentTranslate, userName].forEach {
       contentView.addSubview($0)
       $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    //    [userComment, userCommentTranslate].forEach {
-    //      $0.layer.shadowColor = UIColor.black.cgColor
-    //      $0.layer.shadowOffset = CGSize(width: 0, height: 0)
-    //      $0.layer.shadowRadius = 2
-    //      $0.layer.shadowOpacity = 1.0
-    //      $0.layer.borderColor = UIColor.lightGray.cgColor
-    //      $0.layer.borderWidth = 0.3
-    //    }
+    roundShadowUserComment.addSubview(userComment)
+    roundShadowUserCommentTranslate.addSubview(userCommentTranslate)
+    
+    userComment.translatesAutoresizingMaskIntoConstraints = false
+    userCommentTranslate.translatesAutoresizingMaskIntoConstraints = false
+    
+    contentView.addSubview(dateLabel)
+    dateLabel.translatesAutoresizingMaskIntoConstraints = false
     
     [
-      userName.centerYAnchor.constraint(equalTo: userComment.centerYAnchor),
       userName.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
+      userName.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8)
+    ].forEach { $0.isActive = true }
+    
+    [
+      roundShadowUserComment.widthAnchor.constraint(lessThanOrEqualToConstant: 250),
+      roundShadowUserComment.topAnchor.constraint(equalTo: userName.bottomAnchor, constant: 8),
+      roundShadowUserComment.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
       ].forEach { $0.isActive = true }
     
     [
-      userComment.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -140),
-      userComment.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-      userComment.leadingAnchor.constraint(equalTo: userName.trailingAnchor, constant: 8),
+      roundShadowUserCommentTranslate.widthAnchor.constraint(
+        lessThanOrEqualToConstant: 250),
+      roundShadowUserCommentTranslate.topAnchor.constraint(
+        equalTo: roundShadowUserComment.bottomAnchor, constant: 8),
+      roundShadowUserCommentTranslate.leadingAnchor.constraint(
+        equalTo: contentView.leadingAnchor, constant: 8),
+      roundShadowUserCommentTranslate.bottomAnchor.constraint(
+        equalTo: contentView.bottomAnchor, constant: -8),
       ].forEach { $0.isActive = true }
     
     [
-      dateLabel.centerYAnchor.constraint(equalTo: userCommentTranslate.centerYAnchor),
-      dateLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -140),
+      userComment.topAnchor.constraint(equalTo: roundShadowUserComment.topAnchor),
+      userComment.leadingAnchor.constraint(equalTo: roundShadowUserComment.leadingAnchor),
+      userComment.trailingAnchor.constraint(equalTo: roundShadowUserComment.trailingAnchor),
+      userComment.bottomAnchor.constraint(equalTo: roundShadowUserComment.bottomAnchor)
       ].forEach { $0.isActive = true }
     
     [
-      userCommentTranslate.trailingAnchor.constraint(equalTo: dateLabel.leadingAnchor, constant: -8),
-      userCommentTranslate.topAnchor.constraint(equalTo: userComment.bottomAnchor, constant: 8),
-      userCommentTranslate.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
-      userCommentTranslate.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
+      userCommentTranslate.topAnchor.constraint(equalTo: roundShadowUserCommentTranslate.topAnchor),
+      userCommentTranslate.leadingAnchor.constraint(equalTo: roundShadowUserCommentTranslate.leadingAnchor),
+      userCommentTranslate.trailingAnchor.constraint(equalTo: roundShadowUserCommentTranslate.trailingAnchor),
+      userCommentTranslate.bottomAnchor.constraint(equalTo: roundShadowUserCommentTranslate.bottomAnchor)
       ].forEach { $0.isActive = true }
+    
+    [
+//      dateLabel.centerYAnchor.constraint(equalTo: roundShadowUserCommentTranslate.centerYAnchor),
+      dateLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
+      dateLabel.leadingAnchor.constraint(equalTo: roundShadowUserCommentTranslate.trailingAnchor, constant: 8)
+      ].forEach { $0.isActive = true }
+    
   }
   
   private func createDate() -> String {

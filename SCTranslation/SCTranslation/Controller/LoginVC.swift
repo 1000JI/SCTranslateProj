@@ -39,7 +39,11 @@ class LoginVC: UIViewController {
     return containerView
   }()
   
-  private let emailTextField = CustomTextField(placeholder: "Email")
+  private let emailTextField: CustomTextField = {
+    let tf = CustomTextField(placeholder: "Email")
+    tf.keyboardType = .emailAddress
+    return tf
+  }()
   
   private let passwordTextField: CustomTextField = {
     let tf = CustomTextField(placeholder: "password")

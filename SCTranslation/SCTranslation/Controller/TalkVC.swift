@@ -13,24 +13,25 @@ class TalkVC: UIViewController {
   // MARK: - Properties
   let talkTableView = UITableView()
   let talkVTop = TalkVTop(frame: .zero)
-  lazy var talkVBottom = TalkVBottom(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 80))
+  let talkVBottom = TalkVBottom(frame: .zero)
   
   lazy var fromLanguage: Language? = talkVTop.fromLanguageData
   lazy var toLanguage: Language? = talkVTop.toLanguageData
   
   var talkVBottomCenterY: NSLayoutConstraint?
   var talkVBottomHeight: NSLayoutConstraint?
+  var talkVBottomAnchor: NSLayoutConstraint?
+  var talkVBottomKeyboardAnchor: NSLayoutConstraint?
   
   var talkUser: User?
   private var messages: [Message] = []
   
-  override var inputAccessoryView: UIView? {
-      get { return talkVBottom }
-  }
+  // Keyboadr 올라갔는지 여부 체크
+  private var isKeyboardUP: Bool = false
   
-  override var canBecomeFirstResponder: Bool {
-      return true
-  }
+  private let lineMaxCount: Int = 2
+  private var lineCount: Int = 1
+  private var amountHeightValue: CGFloat = 0
   
   // MARK: - LifeCycle
   
@@ -55,13 +56,23 @@ class TalkVC: UIViewController {
   }
   
   override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(true)
+    super.viewDidAppear(animated)
     
     scrollToBottom()
   }
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     self.view.endEditing(true)
+  }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    removeKeyboardNotification()
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    addKeyboardNotification()
   }
   
   // MARK: - Helpers
@@ -76,7 +87,7 @@ class TalkVC: UIViewController {
   }
   
   private func setupTableView() {
-    talkTableView.backgroundColor = .systemGreen
+    talkTableView.backgroundColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
     talkTableView.dataSource = self
     talkTableView.delegate = self
     talkTableView.rowHeight = UITableView.automaticDimension
@@ -89,7 +100,7 @@ class TalkVC: UIViewController {
   }
   
   private func setupLayout() {
-    [talkVTop, talkTableView].forEach {
+    [talkVTop, talkTableView, talkVBottom].forEach {
       view.addSubview($0)
       $0.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -102,12 +113,20 @@ class TalkVC: UIViewController {
     ])
     
     NSLayoutConstraint.activate([
-      talkTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -80),
-      talkTableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-      talkTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-      talkTableView.topAnchor.constraint(equalTo: talkVTop.bottomAnchor)
+      talkTableView.topAnchor.constraint(equalTo: talkVTop.bottomAnchor),
+      talkTableView.bottomAnchor.constraint(equalTo: talkVBottom.topAnchor),
+      talkTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+      talkTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor)
     ])
     
+    talkVBottom.layout
+//      .bottom(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -8)
+      .leading(equalTo: view.leadingAnchor)
+      .trailing(equalTo: view.trailingAnchor)
+    talkVBottomHeight = talkVBottom.heightAnchor.constraint(equalToConstant: 50)
+    talkVBottomHeight?.isActive = true
+    talkVBottomAnchor = talkVBottom.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -8)
+    talkVBottomAnchor?.isActive = true
   }
   
   private func setupTalkVTop() {
@@ -134,13 +153,35 @@ extension TalkVC: UITextViewDelegate {
   func textViewDidChangeSelection(_ textView: UITextView) {
     let size = CGSize(width: textView.bounds.width, height: .infinity)
     let estimatedSize = textView.sizeThatFits(size)
-    
-    textView.constraints.forEach { (constrant) in
-      if constrant.firstAttribute == .height {
-        constrant.constant = estimatedSize.height
+
+    let divSize = size.width - estimatedSize.width
+    if divSize < 15 {
+      talkVBottom.constraints.forEach { (constrant) in
+        if constrant.firstAttribute == .height {
+          if lineCount < lineMaxCount {
+            constrant.constant += estimatedSize.height
+            amountHeightValue += estimatedSize.height
+            lineCount += 1
+            self.view.layoutIfNeeded()
+          } else {
+            talkVBottom.textView.isScrollEnabled = true
+          }
+        }
+      }
+    } else {
+      talkVBottom.constraints.forEach { (constrant) in
+        if constrant.firstAttribute == .height {
+          constrant.constant -= amountHeightValue
+          lineCount = 1
+          amountHeightValue = 0
+          self.view.layoutIfNeeded()
+          talkVBottom.textView.isScrollEnabled = false
+        }
       }
     }
     
+    
+    scrollToBottom()
     
     if textView.text.isEmpty {
       talkVBottom.returnKey.alpha = 0.5
@@ -165,6 +206,7 @@ extension TalkVC: UITableViewDataSource {
     if messages[indexPath.row].isFromCurrentUser {
       cell = tableView.dequeueReusableCell(withIdentifier: TalkMyCustomCell.identifier, for: indexPath) as! TalkMyCustomCell
       (cell as! TalkMyCustomCell).message = messages[indexPath.row]
+      (cell as! TalkMyCustomCell).translateLanguage = toLanguage
     } else {
       cell = tableView.dequeueReusableCell(withIdentifier: TalkUserCustomCell.identifier, for: indexPath) as! TalkUserCustomCell
       (cell as! TalkUserCustomCell).toUser = talkUser
@@ -247,6 +289,73 @@ extension TalkVC: TalkBottomDelegate {
           if let error = error {
             self.showError(error.localizedDescription)
           }
+      }
+    }
+    
+    talkVBottom.constraints.forEach { (constrant) in
+      if constrant.firstAttribute == .height {
+        constrant.constant -= amountHeightValue
+        lineCount = 1
+        amountHeightValue = 0
+        self.view.layoutIfNeeded()
+        talkVBottom.textView.isScrollEnabled = false
+      }
+    }
+  }
+}
+
+// MARK: - Keyboard가 올라왔을 때 위로 같이 올라가기 위한
+
+extension TalkVC {
+  private func addKeyboardNotification() {
+    NotificationCenter.default.addObserver(
+      self,
+      selector: #selector(keyboardWillShow),
+      name: UIResponder.keyboardWillShowNotification,
+      object: nil
+    )
+    
+    NotificationCenter.default.addObserver(
+      self,
+      selector: #selector(keyboardWillHide),
+      name: UIResponder.keyboardWillHideNotification,
+      object: nil
+    )
+  }
+  
+  private func removeKeyboardNotification() {
+    NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+    NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+  }
+  
+  @objc private func keyboardWillShow(_ notification: Notification) {
+    if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+      if !isKeyboardUP {
+        let keybaordRectangle = keyboardFrame.cgRectValue
+        let keyboardHeight = keybaordRectangle.height
+        
+        UIView.animate(withDuration: 0.3, animations: {
+          let div = self.view.safeAreaInsets.bottom
+          self.talkVBottomAnchor?.isActive = false
+          self.talkVBottomKeyboardAnchor = self.talkVBottom.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -keyboardHeight + div)
+          self.talkVBottomKeyboardAnchor?.isActive = true
+        }) { _ in
+          self.scrollToBottom()
+        }
+        isKeyboardUP = !isKeyboardUP
+      }
+    }
+  }
+  
+  @objc private func keyboardWillHide(_ notification: Notification) {
+    if let _: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+      if isKeyboardUP {
+        
+        UIView.animate(withDuration: 0.3, animations: {
+          self.talkVBottomKeyboardAnchor?.isActive = false
+          self.talkVBottomAnchor?.isActive = true
+        })
+        isKeyboardUP = !isKeyboardUP
       }
     }
   }
