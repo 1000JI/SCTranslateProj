@@ -10,7 +10,6 @@
 		AF27E65A24A38CDF0049C23F /* Loading.json in Resources */ = {isa = PBXBuildFile; fileRef = AF27E65924A38CDF0049C23F /* Loading.json */; };
 		AF27E65D24A38F230049C23F /* TalkVBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF27E65B24A38F230049C23F /* TalkVBottom.swift */; };
 		AF27E65E24A38F230049C23F /* TalkVTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF27E65C24A38F230049C23F /* TalkVTop.swift */; };
-		AF27E66024A38F3E0049C23F /* TalkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF27E65F24A38F3E0049C23F /* TalkVC.swift */; };
 		AF27E66424A38F580049C23F /* TalkMyCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF27E66224A38F580049C23F /* TalkMyCustomCell.swift */; };
 		AF27E66524A38F580049C23F /* TalkUserCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF27E66324A38F580049C23F /* TalkUserCustomCell.swift */; };
 		AF545DD024A08A5C0017C937 /* TranslateTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF545DCF24A08A5C0017C937 /* TranslateTextView.swift */; };
@@ -23,6 +22,12 @@
 		AF57DF6824A38646006FD439 /* Bazzi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF57DF6724A38646006FD439 /* Bazzi.ttf */; };
 		AF59F25724A0FD1400A0BC64 /* TranslateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF59F25624A0FD1400A0BC64 /* TranslateService.swift */; };
 		AF63D1EE24A43900007AC892 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF63D1ED24A43900007AC892 /* MessageModel.swift */; };
+		AF63D20B24A46C8E007AC892 /* LanguageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF63D20424A46C8E007AC892 /* LanguageVC.swift */; };
+		AF63D20D24A46C8E007AC892 /* TextVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF63D20624A46C8E007AC892 /* TextVC.swift */; };
+		AF6A3ACC24A46DED000EE214 /* TalkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A3ACB24A46DED000EE214 /* TalkVC.swift */; };
+		AF6A3AD324A471F8000EE214 /* UserListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A3AD224A471F8000EE214 /* UserListVC.swift */; };
+		AF6A3AD524A4722F000EE214 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A3AD424A4722F000EE214 /* LoginVC.swift */; };
+		AF6A3AD724A4724A000EE214 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A3AD624A4724A000EE214 /* RegisterVC.swift */; };
 		AF70C33424A2247100179910 /* ButtonTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF70C33324A2247100179910 /* ButtonTitleLabel.swift */; };
 		AF80A86E24A10EDC00852D71 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF80A86D24A10EDC00852D71 /* GoogleService-Info.plist */; };
 		AF85EABB249F6ECA00D02D71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF85EABA249F6ECA00D02D71 /* AppDelegate.swift */; };
@@ -35,15 +40,10 @@
 		AF8C1E9424A03CEF000FAB15 /* VoiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8C1E9324A03CEF000FAB15 /* VoiceVC.swift */; };
 		AF8C1E9724A03E14000FAB15 /* TranslateBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8C1E9624A03E14000FAB15 /* TranslateBarView.swift */; };
 		AF8C1E9924A04C15000FAB15 /* MikeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8C1E9824A04C15000FAB15 /* MikeButtonView.swift */; };
-		AFB731B924A2E117009EDDB7 /* UserListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB731B824A2E117009EDDB7 /* UserListVC.swift */; };
-		AFB731BB24A2E1CD009EDDB7 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB731BA24A2E1CD009EDDB7 /* LoginVC.swift */; };
-		AFB731BD24A2E1E4009EDDB7 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB731BC24A2E1E4009EDDB7 /* RegisterVC.swift */; };
 		AFB731BF24A2E2B0009EDDB7 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB731BE24A2E2B0009EDDB7 /* Extension.swift */; };
 		AFB731C224A2E47B009EDDB7 /* InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB731C124A2E47B009EDDB7 /* InputContainerView.swift */; };
 		AFB731C424A2E626009EDDB7 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB731C324A2E626009EDDB7 /* CustomTextField.swift */; };
 		B391BCBDAA753032AD84DE75 /* Pods_SCTranslation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 086A8126B541808160893102 /* Pods_SCTranslation.framework */; };
-		CE82E03B24A09A1700D75C78 /* TextVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82E03A24A09A1700D75C78 /* TextVC.swift */; };
-		CE82E03D24A09A4900D75C78 /* LanguageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82E03C24A09A4900D75C78 /* LanguageVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,7 +53,6 @@
 		AF27E65924A38CDF0049C23F /* Loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Loading.json; sourceTree = "<group>"; };
 		AF27E65B24A38F230049C23F /* TalkVBottom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TalkVBottom.swift; path = "../../../../../../Downloads/SCTranslateProj 2/SCTranslation/SCTranslation/View/TalkVBottom.swift"; sourceTree = "<group>"; };
 		AF27E65C24A38F230049C23F /* TalkVTop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TalkVTop.swift; path = "../../../../../../Downloads/SCTranslateProj 2/SCTranslation/SCTranslation/View/TalkVTop.swift"; sourceTree = "<group>"; };
-		AF27E65F24A38F3E0049C23F /* TalkVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TalkVC.swift; path = "../../../../../../Downloads/SCTranslateProj 2/SCTranslation/SCTranslation/Controller/TalkVC.swift"; sourceTree = "<group>"; };
 		AF27E66224A38F580049C23F /* TalkMyCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkMyCustomCell.swift; sourceTree = "<group>"; };
 		AF27E66324A38F580049C23F /* TalkUserCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkUserCustomCell.swift; sourceTree = "<group>"; };
 		AF545DCF24A08A5C0017C937 /* TranslateTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateTextView.swift; sourceTree = "<group>"; };
@@ -66,6 +65,12 @@
 		AF57DF6724A38646006FD439 /* Bazzi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bazzi.ttf; sourceTree = "<group>"; };
 		AF59F25624A0FD1400A0BC64 /* TranslateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateService.swift; sourceTree = "<group>"; };
 		AF63D1ED24A43900007AC892 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
+		AF63D20424A46C8E007AC892 /* LanguageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageVC.swift; sourceTree = "<group>"; };
+		AF63D20624A46C8E007AC892 /* TextVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextVC.swift; sourceTree = "<group>"; };
+		AF6A3ACB24A46DED000EE214 /* TalkVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkVC.swift; sourceTree = "<group>"; };
+		AF6A3AD224A471F8000EE214 /* UserListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListVC.swift; sourceTree = "<group>"; };
+		AF6A3AD424A4722F000EE214 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		AF6A3AD624A4724A000EE214 /* RegisterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		AF70C33324A2247100179910 /* ButtonTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTitleLabel.swift; sourceTree = "<group>"; };
 		AF80A86D24A10EDC00852D71 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AF85EAB7249F6ECA00D02D71 /* SCTranslation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCTranslation.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,14 +85,9 @@
 		AF8C1E9324A03CEF000FAB15 /* VoiceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceVC.swift; sourceTree = "<group>"; };
 		AF8C1E9624A03E14000FAB15 /* TranslateBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateBarView.swift; sourceTree = "<group>"; };
 		AF8C1E9824A04C15000FAB15 /* MikeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MikeButtonView.swift; sourceTree = "<group>"; };
-		AFB731B824A2E117009EDDB7 /* UserListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListVC.swift; sourceTree = "<group>"; };
-		AFB731BA24A2E1CD009EDDB7 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
-		AFB731BC24A2E1E4009EDDB7 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		AFB731BE24A2E2B0009EDDB7 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		AFB731C124A2E47B009EDDB7 /* InputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputContainerView.swift; sourceTree = "<group>"; };
 		AFB731C324A2E626009EDDB7 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
-		CE82E03A24A09A1700D75C78 /* TextVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextVC.swift; sourceTree = "<group>"; };
-		CE82E03C24A09A4900D75C78 /* LanguageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,14 +194,14 @@
 		AF85EAD0249F710800D02D71 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				AF63D20424A46C8E007AC892 /* LanguageVC.swift */,
 				AF85EACE249F701F00D02D71 /* MainVC.swift */,
+				AF63D20624A46C8E007AC892 /* TextVC.swift */,
+				AF6A3ACB24A46DED000EE214 /* TalkVC.swift */,
 				AF8C1E9324A03CEF000FAB15 /* VoiceVC.swift */,
-				CE82E03A24A09A1700D75C78 /* TextVC.swift */,
-				CE82E03C24A09A4900D75C78 /* LanguageVC.swift */,
-				AFB731BA24A2E1CD009EDDB7 /* LoginVC.swift */,
-				AFB731BC24A2E1E4009EDDB7 /* RegisterVC.swift */,
-				AFB731B824A2E117009EDDB7 /* UserListVC.swift */,
-				AF27E65F24A38F3E0049C23F /* TalkVC.swift */,
+				AF6A3AD424A4722F000EE214 /* LoginVC.swift */,
+				AF6A3AD624A4724A000EE214 /* RegisterVC.swift */,
+				AF6A3AD224A471F8000EE214 /* UserListVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -407,34 +407,34 @@
 			files = (
 				AF27E65E24A38F230049C23F /* TalkVTop.swift in Sources */,
 				AF59F25724A0FD1400A0BC64 /* TranslateService.swift in Sources */,
-				CE82E03D24A09A4900D75C78 /* LanguageVC.swift in Sources */,
-				AFB731BB24A2E1CD009EDDB7 /* LoginVC.swift in Sources */,
 				AF545DD024A08A5C0017C937 /* TranslateTextView.swift in Sources */,
 				AF27E65D24A38F230049C23F /* TalkVBottom.swift in Sources */,
 				AF27E66524A38F580049C23F /* TalkUserCustomCell.swift in Sources */,
 				AF27E66424A38F580049C23F /* TalkMyCustomCell.swift in Sources */,
 				AF8C1E9724A03E14000FAB15 /* TranslateBarView.swift in Sources */,
+				AF6A3AD324A471F8000EE214 /* UserListVC.swift in Sources */,
 				AF8C1E9424A03CEF000FAB15 /* VoiceVC.swift in Sources */,
+				AF6A3AD724A4724A000EE214 /* RegisterVC.swift in Sources */,
 				AF57DF5B24A31136006FD439 /* AuthService.swift in Sources */,
 				AF8C1E9924A04C15000FAB15 /* MikeButtonView.swift in Sources */,
 				AFB731BF24A2E2B0009EDDB7 /* Extension.swift in Sources */,
 				AF57DF5924A30C3D006FD439 /* LoginViewModel.swift in Sources */,
+				AF6A3ACC24A46DED000EE214 /* TalkVC.swift in Sources */,
+				AF63D20D24A46C8E007AC892 /* TextVC.swift in Sources */,
 				AF57DF6124A34BEE006FD439 /* UserModel.swift in Sources */,
+				AF6A3AD524A4722F000EE214 /* LoginVC.swift in Sources */,
 				AF57DF5624A30975006FD439 /* RegisterViewModel.swift in Sources */,
 				AFB731C424A2E626009EDDB7 /* CustomTextField.swift in Sources */,
-				AF27E66024A38F3E0049C23F /* TalkVC.swift in Sources */,
 				AF57DF5D24A33D6F006FD439 /* UserListCell.swift in Sources */,
 				AF85EACF249F701F00D02D71 /* MainVC.swift in Sources */,
 				AF70C33424A2247100179910 /* ButtonTitleLabel.swift in Sources */,
-				AFB731BD24A2E1E4009EDDB7 /* RegisterVC.swift in Sources */,
 				AF85EABB249F6ECA00D02D71 /* AppDelegate.swift in Sources */,
 				AF85EABD249F6ECA00D02D71 /* SceneDelegate.swift in Sources */,
 				AFB731C224A2E47B009EDDB7 /* InputContainerView.swift in Sources */,
 				AF63D1EE24A43900007AC892 /* MessageModel.swift in Sources */,
+				AF63D20B24A46C8E007AC892 /* LanguageVC.swift in Sources */,
 				AF57DF5F24A34B5F006FD439 /* ConversationService.swift in Sources */,
 				AF85EAD4249F827900D02D71 /* LanguageData.swift in Sources */,
-				CE82E03B24A09A1700D75C78 /* TextVC.swift in Sources */,
-				AFB731B924A2E117009EDDB7 /* UserListVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
