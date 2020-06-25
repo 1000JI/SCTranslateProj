@@ -9,7 +9,7 @@
 import UIKit
 
 class TalkUserCustomCell: UITableViewCell {
-  let identifier = "ToCellID"
+  static let identifier = "ToCellID"
   
   lazy var userComment: UILabel = {
     let label = UILabel()
@@ -37,13 +37,31 @@ class TalkUserCustomCell: UITableViewCell {
     return label
   }()
   
-  lazy var date: UILabel = {
+  lazy var dateLabel: UILabel = {
     let label = UILabel()
     label.text = "\(createDate())"
     label.textColor = .black
     label.font = UIFont.boldSystemFont(ofSize: 10)
     return label
   }()
+  
+  var toUser: User?
+  
+  var message: Message? {
+    didSet {
+      guard let receive = message else { return }
+      guard let user = toUser else { return }
+      userComment.text = receive.originalMessage
+      userCommentTranslate.text = receive.translateMessage
+      
+      let date = receive.timestamp.dateValue()
+      let dateFormatter = DateFormatter()
+      dateFormatter.dateFormat = "hh:mm a"
+      
+      dateLabel.text = dateFormatter.string(from: date)
+      userName.text = user.username
+    }
+  }
   
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -75,7 +93,7 @@ class TalkUserCustomCell: UITableViewCell {
   }
   
   private func setupLayout() {
-    [userComment, userName, userCommentTranslate, date].forEach {
+    [userComment, userName, userCommentTranslate, dateLabel].forEach {
       contentView.addSubview($0)
       $0.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -101,12 +119,12 @@ class TalkUserCustomCell: UITableViewCell {
       ].forEach { $0.isActive = true }
     
     [
-      date.centerYAnchor.constraint(equalTo: userCommentTranslate.centerYAnchor),
-      date.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -140),
+      dateLabel.centerYAnchor.constraint(equalTo: userCommentTranslate.centerYAnchor),
+      dateLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -140),
       ].forEach { $0.isActive = true }
     
     [
-      userCommentTranslate.trailingAnchor.constraint(equalTo: date.leadingAnchor, constant: -8),
+      userCommentTranslate.trailingAnchor.constraint(equalTo: dateLabel.leadingAnchor, constant: -8),
       userCommentTranslate.topAnchor.constraint(equalTo: userComment.bottomAnchor, constant: 8),
       userCommentTranslate.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
       userCommentTranslate.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),

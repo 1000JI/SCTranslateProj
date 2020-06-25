@@ -15,6 +15,7 @@ struct Message {
   let toId: String
   let fromId: String
   let timestamp: Timestamp!
+  var user: User?
   
   let isFromCurrentUser: Bool
   

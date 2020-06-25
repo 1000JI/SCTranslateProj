@@ -29,13 +29,27 @@ class TalkMyCustomCell: UITableViewCell {
     return label
   }()
   
-  lazy var date: UILabel = {
+  lazy var dateLabel: UILabel = {
     let label = UILabel()
     label.text = "\(createDate())"
     label.textColor = .black
     label.font = UIFont.boldSystemFont(ofSize: 10)
     return label
   }()
+  
+  var message: Message? {
+    didSet {
+      guard let receive = message else { return }
+      myComment.text = receive.originalMessage
+      myCommentTranslate.text = receive.translateMessage
+      
+      let date = receive.timestamp.dateValue()
+      let dateFormatter = DateFormatter()
+      dateFormatter.dateFormat = "hh:mm a"
+      
+      dateLabel.text = dateFormatter.string(from: date)
+    }
+  }
   
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -67,7 +81,7 @@ class TalkMyCustomCell: UITableViewCell {
   }
   
   private func setupLayout() {
-    [myComment, myCommentTranslate, date].forEach {
+    [myComment, myCommentTranslate, dateLabel].forEach {
       contentView.addSubview($0)
       $0.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -87,12 +101,12 @@ class TalkMyCustomCell: UITableViewCell {
       ].forEach { $0.isActive = true }
     
     [
-      date.centerYAnchor.constraint(equalTo: myCommentTranslate.centerYAnchor),
-      date.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 140),
+      dateLabel.centerYAnchor.constraint(equalTo: myCommentTranslate.centerYAnchor),
+      dateLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 140),
       ].forEach { $0.isActive = true }
     
     [
-      myCommentTranslate.leadingAnchor.constraint(equalTo: date.trailingAnchor, constant: 8),
+      myCommentTranslate.leadingAnchor.constraint(equalTo: dateLabel.trailingAnchor, constant: 8),
       myCommentTranslate.topAnchor.constraint(equalTo: myComment.bottomAnchor, constant: 8),
       myCommentTranslate.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
       myCommentTranslate.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
