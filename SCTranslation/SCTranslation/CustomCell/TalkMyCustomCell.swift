@@ -168,16 +168,8 @@ class TalkMyCustomCell: UITableViewCell {
   func handleSpeaker() {
     guard let language = translateLanguage else { return }
 
-    synthesizer.delegate = self
-    
-    let audioSession = AVAudioSession.sharedInstance()
-    do {
-      try audioSession.setCategory(AVAudioSession.Category.ambient)
-      try audioSession.setMode(AVAudioSession.Mode.measurement)
-      try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
-    } catch {
-      print("audioSession properties weren't set because of an error.")
-    }
+    SpeechService.shared.setupSpeech()
+    SpeechService.shared.synthesizer.delegate = self
     
     let utterance = AVSpeechUtterance(string: myCommentTranslate.text ?? "")
     utterance.voice = AVSpeechSynthesisVoice(language: language.transVoice)

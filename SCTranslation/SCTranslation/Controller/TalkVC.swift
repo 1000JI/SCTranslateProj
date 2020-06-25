@@ -211,6 +211,7 @@ extension TalkVC: UITableViewDataSource {
       cell = tableView.dequeueReusableCell(withIdentifier: TalkUserCustomCell.identifier, for: indexPath) as! TalkUserCustomCell
       (cell as! TalkUserCustomCell).toUser = talkUser
       (cell as! TalkUserCustomCell).message = messages[indexPath.row]
+      (cell as! TalkUserCustomCell).translateLanguage = toLanguage
     }
     
     cell.selectionStyle = .none

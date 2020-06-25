@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Speech
 
 class TalkUserCustomCell: UITableViewCell {
   static let identifier = "ToCellID"
@@ -20,9 +21,13 @@ class TalkUserCustomCell: UITableViewCell {
     label.textColor = .black
     label.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     label.adjustsFontSizeToFitWidth = true
-    
     return label
   }()
+  
+  lazy var tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+  private let synthesizer = AVSpeechSynthesizer()
+  
+  var translateLanguage: Language?
   
   lazy var userCommentTranslate: PaddingLabel = {
     let label = PaddingLabel()
@@ -30,6 +35,8 @@ class TalkUserCustomCell: UITableViewCell {
     label.textColor = .black
     label.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
     label.adjustsFontSizeToFitWidth = true
+    label.isUserInteractionEnabled = true
+    label.addGestureRecognizer(tapGesture)
     return label
   }()
   
@@ -167,4 +174,35 @@ class TalkUserCustomCell: UITableViewCell {
     return current_time_string
   }
   
+  // MARK: - Selectors
+  
+  @objc func handleTap(_ sender: UITapGestureRecognizer) {
+    handleSpeaker()
+  }
+  
+  // MARK: - Helpers
+  
+  func handleSpeaker() {
+    guard let language = translateLanguage else { return }
+
+    SpeechService.shared.setupSpeech()
+    SpeechService.shared.synthesizer.delegate = self
+    
+    let utterance = AVSpeechUtterance(string: userCommentTranslate.text ?? "")
+    utterance.voice = AVSpeechSynthesisVoice(language: language.transVoice)
+    utterance.rate = 0.4
+    synthesizer.speak(utterance)
+  }
+  
+}
+
+// MARK: - AVSpeechSynthesizerDelegate
+
+extension TalkUserCustomCell: AVSpeechSynthesizerDelegate {
+  func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
+  }
+  
+  func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didStart utterance: AVSpeechUtterance) {
+    
+  }
 }

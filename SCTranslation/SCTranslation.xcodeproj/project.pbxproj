@@ -29,6 +29,7 @@
 		AF6A3ADA24A47421000EE214 /* TalkVBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A3AD824A47420000EE214 /* TalkVBottom.swift */; };
 		AF6A3ADB24A47421000EE214 /* TalkVTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A3AD924A47420000EE214 /* TalkVTop.swift */; };
 		AF6A3ADD24A48B37000EE214 /* RoundShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A3ADC24A48B37000EE214 /* RoundShadowView.swift */; };
+		AF6A3ADF24A51031000EE214 /* SpeechService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A3ADE24A51031000EE214 /* SpeechService.swift */; };
 		AF70C33424A2247100179910 /* ButtonTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF70C33324A2247100179910 /* ButtonTitleLabel.swift */; };
 		AF80A86E24A10EDC00852D71 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF80A86D24A10EDC00852D71 /* GoogleService-Info.plist */; };
 		AF85EABB249F6ECA00D02D71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF85EABA249F6ECA00D02D71 /* AppDelegate.swift */; };
@@ -73,6 +74,7 @@
 		AF6A3AD824A47420000EE214 /* TalkVBottom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkVBottom.swift; sourceTree = "<group>"; };
 		AF6A3AD924A47420000EE214 /* TalkVTop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkVTop.swift; sourceTree = "<group>"; };
 		AF6A3ADC24A48B37000EE214 /* RoundShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundShadowView.swift; sourceTree = "<group>"; };
+		AF6A3ADE24A51031000EE214 /* SpeechService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechService.swift; sourceTree = "<group>"; };
 		AF70C33324A2247100179910 /* ButtonTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTitleLabel.swift; sourceTree = "<group>"; };
 		AF80A86D24A10EDC00852D71 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AF85EAB7249F6ECA00D02D71 /* SCTranslation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCTranslation.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +155,7 @@
 				AF59F25624A0FD1400A0BC64 /* TranslateService.swift */,
 				AF57DF5A24A31136006FD439 /* AuthService.swift */,
 				AF57DF5E24A34B5F006FD439 /* ConversationService.swift */,
+				AF6A3ADE24A51031000EE214 /* SpeechService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 				AFB731C424A2E626009EDDB7 /* CustomTextField.swift in Sources */,
 				AF57DF5D24A33D6F006FD439 /* UserListCell.swift in Sources */,
 				AF85EACF249F701F00D02D71 /* MainVC.swift in Sources */,
+				AF6A3ADF24A51031000EE214 /* SpeechService.swift in Sources */,
 				AF70C33424A2247100179910 /* ButtonTitleLabel.swift in Sources */,
 				AF85EABB249F6ECA00D02D71 /* AppDelegate.swift in Sources */,
 				AF85EABD249F6ECA00D02D71 /* SceneDelegate.swift in Sources */,

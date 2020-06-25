@@ -145,7 +145,6 @@ class UserListVC: UIViewController {
   // MARK: - Selectors
   
   @objc func handleDismiss(_ sender: UIBarButtonItem) {
-    print(#function)
     delegate?.dismissViewController()
   }
   
