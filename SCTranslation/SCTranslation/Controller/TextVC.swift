@@ -14,7 +14,7 @@ class TextVC: UIViewController {
   // MARK: - Properties
   let translateBarView = TranslateBarView(frame: .zero)
   lazy var fromTextViewT = TranslateTextView(frame: .zero, with: fromLanguage)
-  lazy var toTextViewT = TranslateTextView(frame: .zero, with: toLanguage)
+  lazy var toTextViewT = TranslateTextView(frame: .zero, with: toLanguage, isFrom: false)
   let mikeButtonView = MikeButtonView(frame: .zero)
   
   lazy var fromLanguage: Language? = translateBarView.fromLanguageData

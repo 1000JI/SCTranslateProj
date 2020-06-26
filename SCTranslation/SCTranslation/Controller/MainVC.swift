@@ -21,12 +21,16 @@ class MainVC: UIViewController {
     return animate
   }()
   
+  private let titleFontSize: CGFloat = 60
+  private let subFontSize: CGFloat = 28
+  private let menuFontSize: CGFloat = 36
+  
   lazy var textBtn: UIButton = {
     let button = UIButton(type: .system)
     button.setTitle("문자 번역", for: .normal)
     button.setTitleColor(.black, for: .normal)
     button.backgroundColor = .systemYellow
-    button.titleLabel?.font = UIFont(name: "Bazzi", size: 44)
+    button.titleLabel?.font = UIFont(name: "Bazzi", size: menuFontSize)
     button.layer.cornerRadius = 28
     button.addTarget(self, action: #selector(handleTextVC), for: .touchUpInside)
     return button
@@ -36,7 +40,7 @@ class MainVC: UIViewController {
     let button = UIButton(type: .system)
     button.setTitle("음성 번역", for: .normal)
     button.setTitleColor(.black, for: .normal)
-    button.titleLabel?.font = UIFont(name: "Bazzi", size: 44)
+    button.titleLabel?.font = UIFont(name: "Bazzi", size: menuFontSize)
     button.backgroundColor = .systemPurple
     button.layer.cornerRadius = 28
     button.addTarget(self, action: #selector(handleVoiceVC), for: .touchUpInside)
@@ -48,10 +52,28 @@ class MainVC: UIViewController {
     button.setTitle("번역 채팅", for: .normal)
     button.setTitleColor(.black, for: .normal)
     button.backgroundColor = .systemGreen
-    button.titleLabel?.font = UIFont(name: "Bazzi", size: 44)
+    button.titleLabel?.font = UIFont(name: "Bazzi", size: menuFontSize)
     button.layer.cornerRadius = 28
     button.addTarget(self, action: #selector(handleChatVC(_:)), for: .touchUpInside)
     return button
+  }()
+  
+  lazy var titleLabel: UILabel = {
+    let label = UILabel()
+    label.text = "SCTranslation"
+    label.font = UIFont(name: "Bazzi", size: titleFontSize)
+    label.textAlignment = .center
+    label.textColor = .black
+    return label
+  }()
+  
+  lazy var subTitleLabel: UILabel = {
+    let label = UILabel()
+    label.text = "심플하고 편안한 번역"
+    label.font = UIFont(name: "Bazzi", size: subFontSize)
+    label.textAlignment = .center
+    label.textColor = .black
+    return label
   }()
   
   let textLabel = ButtonTitleLabel()
@@ -89,7 +111,7 @@ class MainVC: UIViewController {
     
     view.addSubview(animationView)
     animationView.center = view.center
-
+    
     animationView.play { finish in
       self.animationView.removeFromSuperview()
     }
@@ -98,7 +120,7 @@ class MainVC: UIViewController {
   func setupLayout() {
     setupGradientLayer()
     
-    [textBtn, voiceBtn, chatBtn].forEach {
+    [titleLabel, subTitleLabel, textBtn, voiceBtn, chatBtn].forEach {
       view.addSubview($0)
       $0.translatesAutoresizingMaskIntoConstraints = false
       
@@ -107,29 +129,44 @@ class MainVC: UIViewController {
       $0.layer.shadowRadius = 2
       $0.layer.shadowOpacity = 1.0
       
-      $0.layer.borderColor = UIColor.lightGray.cgColor
-      $0.layer.borderWidth = 0.5
+      if $0 != titleLabel, $0 != subTitleLabel {
+        $0.layer.borderColor = UIColor.lightGray.cgColor
+        $0.layer.borderWidth = 0.5
+      }
     }
     
+    let defaultPadding: CGFloat = 48
+    let defaultSidePadding: CGFloat = 68
+    let titleSubPadding: CGFloat = 4
+    let titleSubVerticalPadding: CGFloat = 100
     
-    let defaultPadding: CGFloat = 32
     NSLayoutConstraint.activate([
-      textBtn.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: defaultPadding),
-      textBtn.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: defaultPadding),
-      textBtn.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -defaultPadding)
+      titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: titleSubVerticalPadding),
+      titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+    ])
+    
+    NSLayoutConstraint.activate([
+      subTitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: titleSubPadding),
+      subTitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+    ])
+    
+    NSLayoutConstraint.activate([
+      textBtn.topAnchor.constraint(equalTo: subTitleLabel.bottomAnchor, constant: titleSubVerticalPadding),
+      textBtn.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: defaultSidePadding),
+      textBtn.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -defaultSidePadding)
     ])
     
     NSLayoutConstraint.activate([
       voiceBtn.topAnchor.constraint(equalTo: textBtn.bottomAnchor, constant: defaultPadding),
-      voiceBtn.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: defaultPadding),
-      voiceBtn.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -defaultPadding),
+      voiceBtn.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: defaultSidePadding),
+      voiceBtn.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -defaultSidePadding),
       voiceBtn.heightAnchor.constraint(equalTo: textBtn.heightAnchor, multiplier: 1.0)
     ])
     
     NSLayoutConstraint.activate([
       chatBtn.topAnchor.constraint(equalTo: voiceBtn.bottomAnchor, constant: defaultPadding),
-      chatBtn.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: defaultPadding),
-      chatBtn.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -defaultPadding),
+      chatBtn.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: defaultSidePadding),
+      chatBtn.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -defaultSidePadding),
       chatBtn.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -defaultPadding),
       chatBtn.heightAnchor.constraint(equalTo: voiceBtn.heightAnchor, multiplier: 1.0)
     ])
@@ -183,6 +220,47 @@ class MainVC: UIViewController {
     let controller = LoginVC()
     controller.delegate = self
     animateLabel(chatLabel, toVC: controller)
+  }
+  
+  @objc func handleMainAnimate() {
+    UIView.animateKeyframes(
+      withDuration: 4, // 몇 초 동안 Animation을 할 건지?
+      delay: 0, // 몇 초 뒤에 Animation을 할 것 인지?
+      options: [.allowUserInteraction],
+      animations: {
+        UIView.addKeyframe(
+          withRelativeStartTime: 0, // 4 * 0 = 0, 해당 Keyframe의 시작 시간
+          relativeDuration: 0.25 // 4 * 0.25 = 1, 해당 keyframe의 동작 시간
+        ) {
+          //          self.textBtn.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+        }
+        
+        UIView.addKeyframe(
+          withRelativeStartTime: 0.25, // 4 * 0.25 = 1
+          relativeDuration: 0.25 // 4 * 0.25 = 1
+        ) {
+          self.textBtn.layer.shadowRadius = 2
+          self.textBtn.layer.shadowOpacity = 1.0
+          
+          //          self.textBtn.transform = .identity
+          //          self.voiceBtn.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+        }
+        
+        UIView.addKeyframe(
+          withRelativeStartTime: 0.5, // 4 * 0.5 = 2
+          relativeDuration: 0.25 // 4 * 0.25 = 1
+        ) {
+          //          self.voiceBtn.transform = .identity
+          //          self.chatBtn.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+        }
+        
+        UIView.addKeyframe(
+          withRelativeStartTime: 0.75, // 4 * 0.75 = 3
+          relativeDuration: 0.25 // 4 * 0.25 = 1
+        ) {
+          //          self.chatBtn.transform = .identity
+        }
+    })
   }
   
 }

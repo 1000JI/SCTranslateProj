@@ -88,6 +88,17 @@ class TranslateTextView: UIView {
     }
   }
   
+  convenience init(frame: CGRect, with language: Language?, isFrom: Bool) {
+    self.init(frame: frame)
+    
+    configureLanguage = language
+    
+    if !isFrom {
+      closeBtn.isHidden = true
+      transTextView.isEditable = false
+    }
+  }
+  
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }

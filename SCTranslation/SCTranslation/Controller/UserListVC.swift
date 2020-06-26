@@ -21,6 +21,7 @@ class UserListVC: UIViewController {
   
   private var usersList: [User] = []
   private var filterUsersList: [User] = []
+  private var user: User?
   
   private let searchController = UISearchController(searchResultsController: nil)
   private var isSearchMode: Bool {
@@ -138,11 +139,33 @@ class UserListVC: UIViewController {
       style: .done,
       target: self,
       action: #selector(handleDismiss(_:)))
-    dismissBarButton.tintColor = .white
+    dismissBarButton.tintColor = .black
     navigationItem.leftBarButtonItem = dismissBarButton
+    
+    let myProfileBarButton = UIBarButtonItem(
+      image: UIImage(systemName: "person.fill"),
+      style: .done,
+      target: self,
+      action: #selector(handleProfile))
+    myProfileBarButton.tintColor = .black
+    navigationItem.rightBarButtonItem = myProfileBarButton
   }
   
   // MARK: - Selectors
+  
+  @objc func handleProfile() {
+    showLoader(true)
+    ConversationService.shared.getUser { user in
+      self.showLoader(false)
+      
+      self.user = user
+      let message: String = "접속한 ID: [ \(user.email) ]\n접속한 유저 이름: [ \(user.username) ]"
+      let showProfileAlert = UIAlertController(title: "나의 정보", message: message, preferredStyle: .alert)
+      
+      showProfileAlert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+      self.present(showProfileAlert, animated: true)
+    }
+  }
   
   @objc func handleDismiss(_ sender: UIBarButtonItem) {
     delegate?.dismissViewController()

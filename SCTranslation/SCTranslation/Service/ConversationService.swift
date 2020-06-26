@@ -17,6 +17,20 @@ struct ConversationService {
   static let shared = ConversationService()
   private init() { }
   
+  func getUser(completion: @escaping(User) -> Void) {
+    guard let currentUid = Auth.auth().currentUser?.uid else { return }
+    
+    COLLECTION_USERS.document(currentUid).getDocument { (snapshot, error) in
+      if let error = error {
+        print(#function, "DEBUG: \(error.localizedDescription)")
+        return
+      }
+      
+      guard let data = snapshot?.data() else { return }
+      completion(User(userData: data))
+    }
+  }
+  
   func getUsers(completion: @escaping([User]) -> Void) {
     COLLECTION_USERS.getDocuments { (snapshot, error) in
       if let error = error {
