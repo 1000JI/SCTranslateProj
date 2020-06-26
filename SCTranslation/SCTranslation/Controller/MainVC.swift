@@ -21,8 +21,8 @@ class MainVC: UIViewController {
     return animate
   }()
   
-  private let titleFontSize: CGFloat = 60
-  private let subFontSize: CGFloat = 28
+  private let titleFontSize: CGFloat = 52
+  private let subFontSize: CGFloat = 24
   private let menuFontSize: CGFloat = 36
   
   lazy var textBtn: UIButton = {

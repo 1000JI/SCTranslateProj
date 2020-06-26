@@ -29,8 +29,13 @@ struct TranslateService {
     }
     
     englishGermanTranslator.translate(sourceText) { translatedText, error in
-      guard error == nil, let translatedText = translatedText else { return }
-      
+      guard error == nil, let translatedText = translatedText else {
+        print(#function, "DEBUG2: \(error!.localizedDescription)")
+        englishGermanTranslator.downloadModelIfNeeded(with: conditions) { error in
+          print(error?.localizedDescription ?? "")
+        }
+        return
+      }
       // Translation succeeded.
       completion(translatedText)
     }
