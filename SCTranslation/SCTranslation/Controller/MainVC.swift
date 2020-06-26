@@ -135,8 +135,8 @@ class MainVC: UIViewController {
       }
     }
     
-    let defaultPadding: CGFloat = 48
-    let defaultSidePadding: CGFloat = 68
+    let defaultPadding: CGFloat = 52
+    let defaultSidePadding: CGFloat = 100
     let titleSubPadding: CGFloat = 4
     let titleSubVerticalPadding: CGFloat = 100
     
