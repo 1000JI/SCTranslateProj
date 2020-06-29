@@ -1,6 +1,3 @@
 # SCTranslateProj
 
-번역앱
-	1. 문자번역
-	2. 음성번역
-	3. 번역채팅
+Notion -> https://www.notion.so/jiwooni/SCTranslation-iOS-App-35aed02f6fbb415fafa52168b2cda789
