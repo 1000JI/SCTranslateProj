@@ -120,7 +120,6 @@ class TalkVC: UIViewController {
     ])
     
     talkVBottom.layout
-//      .bottom(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -8)
       .leading(equalTo: view.leadingAnchor)
       .trailing(equalTo: view.trailingAnchor)
     talkVBottomHeight = talkVBottom.heightAnchor.constraint(equalToConstant: 50)
@@ -179,7 +178,6 @@ extension TalkVC: UITextViewDelegate {
         }
       }
     }
-    
     
     scrollToBottom()
     

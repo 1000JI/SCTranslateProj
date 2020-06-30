@@ -221,48 +221,6 @@ class MainVC: UIViewController {
     controller.delegate = self
     animateLabel(chatLabel, toVC: controller)
   }
-  
-  @objc func handleMainAnimate() {
-    UIView.animateKeyframes(
-      withDuration: 4, // 몇 초 동안 Animation을 할 건지?
-      delay: 0, // 몇 초 뒤에 Animation을 할 것 인지?
-      options: [.allowUserInteraction],
-      animations: {
-        UIView.addKeyframe(
-          withRelativeStartTime: 0, // 4 * 0 = 0, 해당 Keyframe의 시작 시간
-          relativeDuration: 0.25 // 4 * 0.25 = 1, 해당 keyframe의 동작 시간
-        ) {
-          //          self.textBtn.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
-        }
-        
-        UIView.addKeyframe(
-          withRelativeStartTime: 0.25, // 4 * 0.25 = 1
-          relativeDuration: 0.25 // 4 * 0.25 = 1
-        ) {
-          self.textBtn.layer.shadowRadius = 2
-          self.textBtn.layer.shadowOpacity = 1.0
-          
-          //          self.textBtn.transform = .identity
-          //          self.voiceBtn.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
-        }
-        
-        UIView.addKeyframe(
-          withRelativeStartTime: 0.5, // 4 * 0.5 = 2
-          relativeDuration: 0.25 // 4 * 0.25 = 1
-        ) {
-          //          self.voiceBtn.transform = .identity
-          //          self.chatBtn.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
-        }
-        
-        UIView.addKeyframe(
-          withRelativeStartTime: 0.75, // 4 * 0.75 = 3
-          relativeDuration: 0.25 // 4 * 0.25 = 1
-        ) {
-          //          self.chatBtn.transform = .identity
-        }
-    })
-  }
-  
 }
 
 extension MainVC: LoginVCDelegate {
