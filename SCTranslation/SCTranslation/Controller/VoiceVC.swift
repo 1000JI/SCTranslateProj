@@ -113,7 +113,6 @@ extension VoiceVC: MikeButtonViewDelegate {
       sourceText: voiceText) { translateText in
         self.toTextView.displayText = translateText
     }
-    
   }
 }
 
